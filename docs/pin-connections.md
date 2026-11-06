@@ -1,6 +1,6 @@
 # Pin connections — Phase 6A
 
-**Working circuit — owner tested.** The owner confirmed successful PN2222 wiring and buzzer operation. This schedule labels electrical functions; it does not impose a new left/middle/right lead orientation. PCB footprint fit and assembled-board testing remain separate from the working wired circuit.
+**Working circuit — owner tested.** The owner confirmed successful PN2222 wiring and buzzer operation. This schedule labels electrical functions; the owner has now confirmed the physical order: flat/text face toward you and legs down, left E, middle B, right C. PCB footprint fit and assembled-board testing remain separate from the working wired circuit.
 
 | From | To | Meaning |
 | --- | --- | --- |
@@ -14,6 +14,8 @@
 | LED_BUILTIN / D13 | Existing onboard L LED | No additional breadboard circuit |
 
 Q1 B = base, C = collector, E = emitter. Pin identifiers in the editable schematic represent these functions only. Buzzer polarity must follow its identified + terminal, not an assumed trimmed-lead length. R1/R2 are not polarized. D1 is across the buzzer, with its band at +5V, not in series.
+
+For a physical placement drawing, see the [400-point breadboard diagram](../hardware/breadboard/README.md). Its hole positions are proposed; its transistor orientation is owner-confirmed.
 
 ## Reading the wiring plan
 

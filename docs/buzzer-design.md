@@ -60,13 +60,10 @@ Use the transistor circuit below. Because the exact buzzer markings and transist
 
 ## Circuit and parts
 
-![Labeled electrical wiring diagram](archive/images/phase5c1-buzzer-wiring.png)
+![Working buzzer circuit](images/buzzer-schematic.svg)
 
-[Open scalable schematic SVG](archive/images/phase5c1-buzzer-wiring.svg).
+[Final breadboard wiring and hole table](../hardware/breadboard/README.md) uses the owner-confirmed transistor orientation: flat/text face toward you, legs down, left E, middle B, right C. The older diagrams in `archive/images/` remain historical planning references; their pending-identification labels are superseded.
 
-![Conditional breadboard connection plan](archive/images/phase5c1-breadboard.png)
-
-[Open breadboard SVG](archive/images/phase5c1-breadboard.svg). This is a connection plan, not a verified transistor footprint. Use isolated jumpers from the identified transistor terminals to the labeled breadboard rows. The three physical transistor legs remain unassigned until identification is complete. Rows 10, 20, 24, and 30 below are example rows on a standard breadboard with a–e and f–j contact groups; check your board's actual connectivity first.
 
 | Breadboard node | Example holes | Connect here |
 | --- | --- | --- |

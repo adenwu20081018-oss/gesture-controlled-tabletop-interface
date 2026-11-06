@@ -1,10 +1,14 @@
 # Gesture-Controlled Tabletop Interface — hardware
 
-The working feedback setup is a USB-connected ELEGOO Mega 2560 using its onboard D13 LED. It needs no external LED wiring. The developer has physically verified feedback from both mouse and gesture actions.
+The main prototype uses an ELEGOO Mega 2560, breadboard, jumper wires and the working transistor-driven active buzzer. The Mega’s onboard D13 LED provides feedback from mouse and gesture actions; no external LED is used.
 
-## PCB design
+## Breadboard wiring
 
-[Open the KiCad buzzer-driver project](kicad/buzzer-driver-pcb/README.md) for editable schematic and PCB files, 3D renders, STEP and actual ERC/DRC reports. This is a separate routed daughterboard, fabrication and assembled-board testing have not been reported.
+[Open the editable breadboard diagram and connection table](breadboard/README.md). It uses the owner-confirmed E–B–C transistor orientation and a 400-point board.
+
+## Optional PCB design
+
+[Open the KiCad buzzer-driver project](kicad/buzzer-driver-pcb/README.md) for editable schematic and PCB files, 3D renders, STEP and actual ERC/DRC reports. This optional routed daughterboard integrates the breadboard buzzer circuit. It does not replace the main prototype; fabrication and assembled-board testing have not been reported.
 
 ## Electrical design
 
@@ -12,9 +16,9 @@ The working feedback setup is a USB-connected ELEGOO Mega 2560 using its onboard
 
 | Document | Purpose |
 | --- | --- |
-| [Schematic SVG](../docs/images/buzzer-schematic.svg) / [PNG](../docs/images/buzzer-schematic.svg) | Readable electrical circuit |
+| [Schematic SVG](../docs/images/buzzer-schematic.svg) | Readable electrical circuit |
 | [Connection schedule](../docs/images/arduino-wiring.svg) | Color-coded nets and functional endpoints |
-| [KiCad source](kicad/README.md) | Editable schematic; native opening and ERC pending |
+| [KiCad source](kicad/README.md) | Editable functional schematic; native parsing checked |
 | [BOM](../docs/hardware-bom.md) | Components and design status |
 | [Pin connections](../docs/pin-connections.md) | Detailed connection and polarity reference |
 | [Validation record](../docs/hardware-validation-status.md) | What was actually checked |

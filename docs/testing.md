@@ -4,7 +4,7 @@ This is a curated summary of recorded project checks, not a CI badge or a claim 
 
 ## Recorded software runs
 
-The Phase 10 reruns completed on 2026-11-05 with JDK 17 and the existing Python 3.12 environment:
+The final-cleanup reruns completed during the 2026-11-05–06 cleanup with JDK 17 and the existing Python 3.12 environment:
 
 | Suite | Result | Scope |
 | --- | --- | --- |
@@ -19,7 +19,7 @@ Earlier Phase 5C-1 evidence records a successful Mega-target compile (3,478 byte
 
 No new software feature or game logic changed in Phase 8. The portfolio work checked documentation links, image decoding and the proposed Git file set; it captured three real Swing views without opening a physical serial port or camera.
 
-The new `AssetLoadingTest` decodes every PNG and WAV in `assets/`, checks loaded icons across the title, four introduction screens, game and both results, and exercises every character portrait variant. It runs through `build-phase7a.ps1 -Test`. The cleanup report records file preservation and native KiCad rechecks.
+`AssetLoadingTest` decodes every PNG and WAV in `assets/`, checks loaded icons across the title, four introduction screens, game and both results, and exercises every character portrait variant. It runs through `build-phase7a.ps1 -Test`. The cleanup report records file preservation and native KiCad rechecks.
 
 ## Repeat the software checks
 

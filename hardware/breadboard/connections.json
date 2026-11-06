@@ -1,0 +1,86 @@
+{
+  "components": {
+    "Q1.E": "e12",
+    "Q1.B": "e13",
+    "Q1.C": "e14",
+    "R1.1": "a4",
+    "R1.2": "a13",
+    "R2.1": "g13",
+    "R2.2": "g18",
+    "D1.K": "a23",
+    "D1.A": "a27",
+    "BZ1.+": "f23",
+    "BZ1.-": "f27"
+  },
+  "jumpers": [
+    {
+      "name": "D8 to R1",
+      "from": "Mega.D8",
+      "to": "b4",
+      "color": "#1686c4"
+    },
+    {
+      "name": "5V supply",
+      "from": "Mega.5V",
+      "to": "P1",
+      "color": "#cf3d3b"
+    },
+    {
+      "name": "Ground supply",
+      "from": "Mega.GND",
+      "to": "N1",
+      "color": "#242932"
+    },
+    {
+      "name": "Ground rail bridge",
+      "from": "N25",
+      "to": "n25",
+      "color": "#242932"
+    },
+    {
+      "name": "R2 ground",
+      "from": "j18",
+      "to": "n16",
+      "color": "#242932"
+    },
+    {
+      "name": "Emitter ground",
+      "from": "b12",
+      "to": "N10",
+      "color": "#242932"
+    },
+    {
+      "name": "Base to pull-down",
+      "from": "b13",
+      "to": "f13",
+      "color": "#1686c4"
+    },
+    {
+      "name": "5V to buzzer branch",
+      "from": "P20",
+      "to": "c23",
+      "color": "#cf3d3b"
+    },
+    {
+      "name": "Collector branch",
+      "from": "c14",
+      "to": "c27",
+      "color": "#8753b8"
+    },
+    {
+      "name": "Buzzer positive bridge",
+      "from": "e23",
+      "to": "g23",
+      "color": "#cf3d3b"
+    },
+    {
+      "name": "Buzzer negative bridge",
+      "from": "e27",
+      "to": "g27",
+      "color": "#8753b8"
+    }
+  ],
+  "transistor_view": "flat/text face toward viewer, legs down: E-B-C",
+  "terminal_holes": 300,
+  "rail_holes": 100
+}

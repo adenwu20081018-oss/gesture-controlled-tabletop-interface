@@ -66,11 +66,10 @@ The three high-resolution PNGs are native `kicad-cli pcb render` ray-traced imag
 - `buzzer-driver.kicad_pcb` — native routed board with filled GND zone.
 - `buzzer-driver.step` — board and component 3D exchange model.
 - `sym-lib-table`, `fp-lib-table` — project-local library references.
-- `images/pcb-editor-screenshot.png` — historical KiCad PCB Editor capture from before this label update; older status text is superseded.
 - `images/pcb-isometric.png`, `pcb-top.png`, `pcb-bottom.png` — native 3D renders.
 - `images/pcb-layout.svg`, `.png` — native front copper/silkscreen plot and preview.
-- `images/pcb-bottom-copper.svg`, `.png` — bottom copper/silkscreen plot and preview.
-- `images/buzzer-driver.svg`, `.png` — native schematic export and preview.
+- `images/pcb-bottom-copper.svg` — bottom copper/silkscreen plot and preview.
+- `images/buzzer-driver.svg` — native schematic export and preview.
 - `reports/erc.rpt`, `drc.rpt`, `netlist.net` — actual KiCad reports and exported netlist.
 - `reports/model-check.json` — component model resolution and PCB inventory.
 - `VALIDATION.md` — scope, remaining requirements and repeatable CLI commands.

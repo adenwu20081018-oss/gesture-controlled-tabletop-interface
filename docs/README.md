@@ -13,4 +13,4 @@ The project overview and purpose are in the [main README](../README.md).
 | [Hardware](../hardware/README.md) | PCB, BOM, connections and validation |
 | [Credits](credits.md) | Original group work and dependency provenance |
 
-[Earlier development records](archive/README.md) are retained for traceability. [Local reorganization review](reorganization.md) records this cleanup and the proposed GitHub rename; nothing is published automatically.
+[Earlier development records](archive/README.md) are retained for traceability. [Final cleanup review](reorganization.md) lists local changes and verification. Publishing requires owner approval.

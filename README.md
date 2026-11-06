@@ -1,56 +1,53 @@
 # Gesture-Controlled Tabletop Interface
 
-A camera-based interface that turns hand movements into application input. I use Python, OpenCV and MediaPipe to track a hand, map its position into a Java window, and select controls with a pinch. An Arduino Mega provides LED feedback. Guess Who is the first application I used to test the idea.
+A camera-based interface for controlling applications with hand gestures. Guess Who is the first application I used to demonstrate it.
 
-![The Java Guess Who application used to test the interface](screenshots/game-board.png)
+[Setup](docs/setup.md) · [Hardware files](hardware/README.md) · [Tests](docs/testing.md)
 
 ## Why I Built This
 
 Back in high school, during my Grade 11 year, I spent a lot of time working on this ISP Guess Who game. This game was one of the starting points that sparked my interest in programming and building a game of my own from scratch, from designing the characters and GUI to creating the music. After finishing it, I wasn't satisfied with just letting all that hard work sit in a folder on my computer. I wanted to find a way to bring the game back and do something different with it. With the naive idea of recreating Iron Man's JARVIS system, I decided to try implementing my game in a completely different way, turning it into an interactive tabletop game and controlling it with hand gestures directly on the table.
 
-This repository builds on that work with camera input, calibration, communication and hardware feedback. Guess Who provided real controls and game states to test.
+## How It Works
 
-## What I did
+Camera → Python/OpenCV/MediaPipe → Java Guess Who → Arduino Mega 2560
 
-- Tracked the index fingertip using OpenCV camera frames and MediaPipe hand landmarks.
-- Added pinch detection with separate press/release thresholds, debounce and cooldown so one held pinch does not repeatedly click.
-- Used four-point calibration to map camera coordinates into the application viewport.
-- Sent selections from Python to Java over TCP, using the same Swing button actions as mouse input.
-- Connected Java to an ELEGOO Mega 2560 over USB serial for onboard LED feedback.
-- Added a resizable presentation mode and designed a small buzzer-driver PCB in KiCad.
+Python tracks my fingertip and detects a pinch as a selection. Four-point camera calibration maps the interaction area into the game window. Python sends the selection over TCP, and Java uses the same button actions as a mouse click. The Mega's onboard LED responds to character-card actions through USB serial.
 
-## How it works
-
-Camera → Python hand tracking → calibrated coordinates → Java controls → Arduino LED feedback
-
-I select four corners in the camera image to define the interaction area. A homography transforms positions inside that area into a rectangular viewport. Java maps those positions to the current window and finds the button underneath. A pinch sends a selection; opening the fingers prepares the next one.
-
-Python and Java exchange newline-delimited JSON over local TCP. Responses report whether an action executed, and event IDs prevent duplicate requests from repeating it. Eligible character-card changes queue a serial `BLINK` command without blocking the game window.
-
-The current demonstration uses my laptop and built-in webcam. I have physically confirmed mouse and webcam-pinch control with Mega LED feedback. An HDMI projector is the intended tabletop display, but physical projection and an external overhead webcam have not yet been tested.
+I have tested mouse and webcam-pinch control with Arduino LED feedback on my laptop. The resizable interface is ready for a future projector setup, but I have not physically tested tabletop projection or an external webcam yet.
 
 ## Hardware
 
-The tested setup uses a laptop, its webcam, an ELEGOO Mega 2560 and a USB data cable. The Mega's onboard D13 LED needs no extra wiring.
+My main prototype uses an ELEGOO Mega 2560, a 400-point half-size breadboard, jumper wires and a PN2222/2N2222A transistor-driven 5V active buzzer. The circuit includes a 470Ω base resistor, 10kΩ pull-down and 1N4007 diode. I have tested the wiring and confirmed that the buzzer works. BUZZ is a standalone command; automatic game sound is not integrated.
 
-The [KiCad buzzer-driver project](hardware/kicad/buzzer-driver-pcb/README.md) includes an editable schematic, routed PCB, 3D renders and check reports. I have tested the PN2222 transistor wiring and confirmed that the buzzer circuit works. The PCB is a real editable board design with components, footprints and copper traces; fabrication and assembled-PCB testing are separate steps that have not been reported. The [hardware guide](hardware/README.md) records the connections and parts.
+![Arduino Mega and breadboard buzzer wiring](hardware/breadboard/tabletop-wiring.png)
 
-## Challenges Faced
+[Editable drawing and connections](hardware/breadboard/README.md). My laptop and built-in webcam handle input; a projector is the intended tabletop display. The D13 LED is already on the Mega, so there is no external LED circuit.
 
 ## Build Photos
 
-*I'll add my own setup and build photographs here.* Put real images in [photos/](photos/README.md); that folder includes a Markdown example for adding captions. The screenshot above shows the application.
+I'll add my own hardware photographs here. Images belong in [photos/](photos/README.md).
 
-## Setup and files
+<!-- Add real photos here, for example: ![My Mega and breadboard setup](photos/mega-breadboard.jpg) -->
 
-Start with the [Windows setup guide](docs/setup.md). It uses JDK 17, Python 3.12 and pinned dependencies. See [testing](docs/testing.md) for repeatable checks and [projector setup](docs/projector-setup.md) for laptop practice and future Extend-mode use.
+## Setup and Files
+
+Start with the [Windows setup guide](docs/setup.md) to install the dependencies, build Java and run hand tracking. Run commands from the repository root so the game can find its assets. See [testing](docs/testing.md) for repeatable checks and [projector setup](docs/projector-setup.md) for calibration and future display use.
 
 | Folder | Contents |
 | --- | --- |
 | `src/` | Java game and input integration |
-| `computer-vision/` | Tracking, pinch detection and calibration |
-| `assets/` | Button images, portraits, interface artwork and audio |
-| `arduino/` | Firmware, serial controller and firmware tests |
-| `hardware/` | KiCad PCB, drawings and spatial concept |
-| `screenshots/`, `photos/` | Actual application captures and future build photographs |
-| `tests/`, `docs/` | Regression tests and supporting guides |
+| `computer-vision/` | Python hand tracking, pinch detection and calibration |
+| `assets/` | Button images, character portraits, interface artwork and audio |
+| `arduino/` | Mega firmware, Java serial controller and hardware-free tests |
+| `hardware/` | Breadboard drawing and concept PCB design |
+| `photos/`, `screenshots/` | Future real build photos and actual game captures |
+| `docs/`, `tests/` | Supporting guides and regression tests |
+
+## Challenges Faced
+
+## **Next Step: Concept PCB Design**
+
+I designed this PCB in KiCad to bring the working breadboard buzzer circuit onto a dedicated board. The [editable schematic and routed PCB files](hardware/kicad/buzzer-driver-pcb/) include the components, footprints and copper traces. Fabricating and testing the assembled PCB is the next step.
+
+![Concept PCB design rendered in KiCad](hardware/kicad/buzzer-driver-pcb/images/pcb-isometric.png)

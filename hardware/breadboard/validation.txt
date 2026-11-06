@@ -1,0 +1,6 @@
+PASS: 5 expected circuit nets; no cross-net shorts.
+PASS: 400 breadboard holes (300 terminal + 100 rail).
+PASS: all component/jumper endpoints occupy unique holes.
+PASS: owner-confirmed E-B-C at e12/e13/e14.
+PASS: SVG XML parsed.
+Scope: static connectivity check, not simulation or physical testing.
