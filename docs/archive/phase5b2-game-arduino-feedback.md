@@ -14,7 +14,7 @@ Created:
 - `src/groupDGuessWho/ArduinoFeedback.java`: single background worker, bounded request queue, logging, cleanup, and adapter to the existing controller.
 - `tests/java/groupDGuessWho/ArduinoFeedbackTest.java`: fake-Arduino tests, including the actual Board and TCP/Swing selection route.
 - `build-phase5b2.ps1`: reproducible Java 17 build and Java tests; reuses the Phase 5B-1 dependency downloader/checksum and tests.
-- `docs/phase5b2-game-arduino-feedback.md`: this guide.
+- `docs/archive/phase5b2-game-arduino-feedback.md`: this guide.
 
 Generated locally: `build-phase5b2/` class files, `phase5b2-test-results.txt`, `phase5b2-feedback-test-results.txt` (final feedback-fixture rerun), and `phase5b2-protocol-test-results.txt`. The existing Phase 5B-1 build/test outputs are regenerated too.
 
@@ -50,7 +50,7 @@ Set-Location 'C:\path\to\Interactive-Projection-Guess-Who'
 .\build-phase5b2.ps1 -Test
 ```
 
-For a build without running tests, omit `-Test`. The script uses `java` and `javac` on PATH. It calls the existing Phase 5B-1 script to download/check the exact JAR if necessary. The pinned JAR and SHA-256 are documented in [Phase 5B-1](phase5b1-java-arduino-test.md).
+For a build without running tests, omit `-Test`. The script uses `java` and `javac` on PATH. It calls the existing Phase 5B-1 script to download/check the exact JAR if necessary. The pinned JAR and SHA-256 are documented in [Phase 5B-1](../serial-test.md).
 
 The complete manual equivalent for dependency setup and game compilation is below. Use this if script execution is blocked by PowerShell; no execution-policy change is required:
 

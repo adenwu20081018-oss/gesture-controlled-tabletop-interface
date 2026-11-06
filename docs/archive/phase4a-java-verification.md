@@ -4,7 +4,7 @@ Verified October 26, 2026. No existing files were modified. No compatibility fix
 
 ## Build
 
-Read docs/existing-game-analysis.md and the Eclipse project metadata. Rechecked Java entry point, imports, Board startup, and resource references. Eclipse uses src as source, bin as output, UTF-8, and Java SE 17. All dependencies are standard Java APIs (Swing/AWT, Java Sound, collections and file I/O); no external JARs are required.
+Read docs/archive/existing-game-analysis.md and the Eclipse project metadata. Rechecked Java entry point, imports, Board startup, and resource references. Eclipse uses src as source, bin as output, UTF-8, and Java SE 17. All dependencies are standard Java APIs (Swing/AWT, Java Sound, collections and file I/O); no external JARs are required.
 
 Installed JDK: C:\Program Files\Eclipse Adoptium\jdk-17.0.20.101-hotspot
 Runtime reports Temurin OpenJDK 17.0.20.1+1. Java was not on PATH in the agent's existing shell, so full executable paths were used.

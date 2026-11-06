@@ -1,0 +1,998 @@
+(kicad_sch (version 20250114) (generator "eeschema") (uuid cb437a7e-893b-5720-a20b-22458b306832) (paper "A4")
+(title_block (title "Interactive Guess Who - Buzzer Driver") (date "2026-10-31") (rev "1.0") (comment 1 "PCB Design - Fabrication Not Validated") (comment 2 "Working wired circuit; verify PCB footprint fit before fabrication"))
+(lib_symbols (symbol "Connector_Generic:Conn_01x03"
+		(pin_names
+			(offset 1.016)
+			(hide yes)
+		)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(duplicate_pin_numbers_are_jumpers no)
+		(property "Reference" "J"
+			(at 0 5.08 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "Conn_01x03"
+			(at 0 -5.08 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Generic connector, single row, 01x03, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "ki_keywords" "connector"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "ki_fp_filters" "Connector*:*_1x??_*"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(symbol "Conn_01x03_1_1"
+			(rectangle
+				(start -1.27 3.81)
+				(end 1.27 -3.81)
+				(stroke
+					(width 0.254)
+					(type default)
+				)
+				(fill
+					(type background)
+				)
+			)
+			(rectangle
+				(start -1.27 2.667)
+				(end 0 2.413)
+				(stroke
+					(width 0.1524)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(rectangle
+				(start -1.27 0.127)
+				(end 0 -0.127)
+				(stroke
+					(width 0.1524)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(rectangle
+				(start -1.27 -2.413)
+				(end 0 -2.667)
+				(stroke
+					(width 0.1524)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(pin passive line
+				(at -5.08 2.54 0)
+				(length 3.81)
+				(name "Pin_1"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "1"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin passive line
+				(at -5.08 0 0)
+				(length 3.81)
+				(name "Pin_2"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "2"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin passive line
+				(at -5.08 -2.54 0)
+				(length 3.81)
+				(name "Pin_3"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "3"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+		)
+		(embedded_fonts no)
+	)(symbol "Device:R"
+		(pin_numbers
+			(hide yes)
+		)
+		(pin_names
+			(offset 0)
+		)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(duplicate_pin_numbers_are_jumpers no)
+		(property "Reference" "R"
+			(at 2.032 0 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "R"
+			(at 0 0 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at -1.778 0 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "ki_keywords" "R res resistor"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "ki_fp_filters" "R_*"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(symbol "R_0_1"
+			(rectangle
+				(start -1.016 -2.54)
+				(end 1.016 2.54)
+				(stroke
+					(width 0.254)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+		)
+		(symbol "R_1_1"
+			(pin passive line
+				(at 0 3.81 270)
+				(length 1.27)
+				(name ""
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "1"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin passive line
+				(at 0 -3.81 90)
+				(length 1.27)
+				(name ""
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "2"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+		)
+		(embedded_fonts no)
+	)(symbol "Transistor_BJT:Q_NPN_BCE"
+		(pin_names
+			(offset 0)
+			(hide yes)
+		)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(duplicate_pin_numbers_are_jumpers no)
+		(property "Reference" "Q"
+			(at 5.08 1.27 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "Q_NPN_BCE"
+			(at 5.08 -1.27 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 5.08 2.54 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "NPN transistor, base/collector/emitter"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sim.Device" "NPN"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sim.Pins" "1=B 2=C 3=E"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "ki_keywords" "BJT"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(symbol "Q_NPN_BCE_0_1"
+			(polyline
+				(pts
+					(xy -2.54 0) (xy 0.635 0)
+				)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(polyline
+				(pts
+					(xy 0.635 1.905) (xy 0.635 -1.905)
+				)
+				(stroke
+					(width 0.508)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(circle
+				(center 1.27 0)
+				(radius 2.8194)
+				(stroke
+					(width 0.254)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+		)
+		(symbol "Q_NPN_BCE_1_1"
+			(polyline
+				(pts
+					(xy 0.635 0.635) (xy 2.54 2.54)
+				)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(polyline
+				(pts
+					(xy 0.635 -0.635) (xy 2.54 -2.54)
+				)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(polyline
+				(pts
+					(xy 1.27 -1.778) (xy 1.778 -1.27) (xy 2.286 -2.286) (xy 1.27 -1.778)
+				)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type outline)
+				)
+			)
+			(pin input line
+				(at -5.08 0 0)
+				(length 2.54)
+				(name "B"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "1"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin passive line
+				(at 2.54 5.08 270)
+				(length 2.54)
+				(name "C"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "2"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin passive line
+				(at 2.54 -5.08 90)
+				(length 2.54)
+				(name "E"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "3"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+		)
+		(embedded_fonts no)
+	)(symbol "Device:D"
+		(pin_numbers
+			(hide yes)
+		)
+		(pin_names
+			(offset 1.016)
+			(hide yes)
+		)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(duplicate_pin_numbers_are_jumpers no)
+		(property "Reference" "D"
+			(at 0 2.54 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "D"
+			(at 0 -2.54 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Diode"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sim.Device" "D"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sim.Pins" "1=K 2=A"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "ki_keywords" "diode"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "ki_fp_filters" "TO-???* *_Diode_* *SingleDiode* D_*"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(symbol "D_0_1"
+			(polyline
+				(pts
+					(xy -1.27 1.27) (xy -1.27 -1.27)
+				)
+				(stroke
+					(width 0.254)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(polyline
+				(pts
+					(xy 1.27 1.27) (xy 1.27 -1.27) (xy -1.27 0) (xy 1.27 1.27)
+				)
+				(stroke
+					(width 0.254)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(polyline
+				(pts
+					(xy 1.27 0) (xy -1.27 0)
+				)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+		)
+		(symbol "D_1_1"
+			(pin passive line
+				(at -3.81 0 0)
+				(length 2.54)
+				(name "K"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "1"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin passive line
+				(at 3.81 0 180)
+				(length 2.54)
+				(name "A"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "2"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+		)
+		(embedded_fonts no)
+	)(symbol "Device:Buzzer"
+		(pin_names
+			(offset 0.0254)
+			(hide yes)
+		)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(duplicate_pin_numbers_are_jumpers no)
+		(property "Reference" "BZ"
+			(at 3.81 1.27 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "Buzzer"
+			(at 3.81 -1.27 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at -0.635 2.54 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at -0.635 2.54 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Buzzer, polarized"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "ki_keywords" "quartz resonator ceramic"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "ki_fp_filters" "*Buzzer*"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(symbol "Buzzer_0_1"
+			(polyline
+				(pts
+					(xy -1.651 1.905) (xy -1.143 1.905)
+				)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(polyline
+				(pts
+					(xy -1.397 2.159) (xy -1.397 1.651)
+				)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(arc
+				(start 0 3.175)
+				(mid 3.1612 0)
+				(end 0 -3.175)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(polyline
+				(pts
+					(xy 0 3.175) (xy 0 -3.175)
+				)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+		)
+		(symbol "Buzzer_1_1"
+			(pin passive line
+				(at -2.54 2.54 0)
+				(length 2.54)
+				(name "+"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "1"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin passive line
+				(at -2.54 -2.54 0)
+				(length 2.54)
+				(name "-"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "2"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+		)
+		(embedded_fonts no)
+	))
+(symbol (lib_id "Connector_Generic:Conn_01x03") (at 45.72 55.88 0) (unit 1) (in_bom yes) (on_board yes) (dnp no) (uuid 4a80d4d2-44fb-5247-a61e-4f7ef7fd8cf4)
+(property "Reference" "J1" (at 45.72 45.88 0) (effects (font (size 1.27 1.27))))
+(property "Value" "MEGA D8 / 5V / GND" (at 45.72 48.88 0) (effects (font (size 1.27 1.27))))
+(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical" (at 45.72 55.88 0) (effects (font (size 1.27 1.27)) (hide yes)))
+(pin "1" (uuid 0c013590-2e53-5334-81c0-04e54ff39df2))
+(pin "2" (uuid aa58c956-1a36-5cef-b379-1ddf0e306af1))
+(pin "3" (uuid cbe18c4d-6594-5b81-aeb7-7fc04c656fba))
+(instances (project "buzzer-driver" (path "/cb437a7e-893b-5720-a20b-22458b306832" (reference "J1") (unit 1)))))
+(wire (pts (xy 40.64 53.34) (xy 33.02 53.34)) (stroke (width 0.1524) (type default)) (uuid acca76d7-a58e-5edf-b604-eeb935eb994b))
+(label "D8" (at 33.02 53.34 0) (effects (font (size 1.27 1.27)) (justify left bottom)) (uuid 8e106f71-1a52-5bc7-ae00-478c07f1db2b))
+(wire (pts (xy 40.64 55.88) (xy 33.02 55.88)) (stroke (width 0.1524) (type default)) (uuid 048ef617-ff54-502d-a6ac-45488e7f1dd6))
+(label "+5V" (at 33.02 55.88 0) (effects (font (size 1.27 1.27)) (justify left bottom)) (uuid 3f0b0068-1789-5c3f-9510-b34bbdb29757))
+(wire (pts (xy 40.64 58.42) (xy 33.02 58.42)) (stroke (width 0.1524) (type default)) (uuid b1c81fde-8b4b-5bf9-995c-faae43d29f03))
+(label "GND" (at 33.02 58.42 0) (effects (font (size 1.27 1.27)) (justify left bottom)) (uuid 1b46c8ed-d896-55aa-8fa6-cedff2ccd421))
+(symbol (lib_id "Device:R") (at 88.9 55.88 0) (unit 1) (in_bom yes) (on_board yes) (dnp no) (uuid c150fe44-abd0-5c44-83b0-56cf252e24b5)
+(property "Reference" "R1" (at 111.9 53.88 0) (effects (font (size 1.27 1.27))))
+(property "Value" "470R" (at 111.9 57.88 0) (effects (font (size 1.27 1.27))))
+(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" (at 88.9 55.88 0) (effects (font (size 1.27 1.27)) (hide yes)))
+(pin "1" (uuid 5bd5e45d-2bf4-5670-968d-58616e178b58))
+(pin "2" (uuid e0df28e7-9bee-5824-bad5-d6d2910c97e8))
+(instances (project "buzzer-driver" (path "/cb437a7e-893b-5720-a20b-22458b306832" (reference "R1") (unit 1)))))
+(wire (pts (xy 88.9 52.07) (xy 88.9 44.45)) (stroke (width 0.1524) (type default)) (uuid 2cea2351-cb27-56c7-8ea5-f5c32d1eb673))
+(label "D8" (at 88.9 44.45 0) (effects (font (size 1.27 1.27)) (justify left bottom)) (uuid 6bcc1bfb-a44c-5bdb-8031-fd576250f503))
+(wire (pts (xy 88.9 59.69) (xy 88.9 67.31)) (stroke (width 0.1524) (type default)) (uuid b0e83fb6-7035-5338-81d9-6ac9af5b25fc))
+(label "BASE" (at 88.9 67.31 0) (effects (font (size 1.27 1.27)) (justify left bottom)) (uuid 5d7ef76c-00e6-5a54-933b-6ace478ba4c9))
+(symbol (lib_id "Device:R") (at 88.9 99.06 0) (unit 1) (in_bom yes) (on_board yes) (dnp no) (uuid 5331616c-1b43-5743-8add-cf2d5f3c241c)
+(property "Reference" "R2" (at 111.9 97.06 0) (effects (font (size 1.27 1.27))))
+(property "Value" "10k" (at 111.9 101.06 0) (effects (font (size 1.27 1.27))))
+(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" (at 88.9 99.06 0) (effects (font (size 1.27 1.27)) (hide yes)))
+(pin "1" (uuid 4bc12bba-2b3d-5db9-8f04-ed95e25ca2df))
+(pin "2" (uuid a530295a-c064-5549-8f1f-7cd576a525ab))
+(instances (project "buzzer-driver" (path "/cb437a7e-893b-5720-a20b-22458b306832" (reference "R2") (unit 1)))))
+(wire (pts (xy 88.9 95.25) (xy 88.9 87.63)) (stroke (width 0.1524) (type default)) (uuid a617ccae-365c-536a-9cc8-e8453843aa7b))
+(label "BASE" (at 88.9 87.63 0) (effects (font (size 1.27 1.27)) (justify left bottom)) (uuid bf898f6c-3b8d-5ae6-851f-0ac22b763601))
+(wire (pts (xy 88.9 102.87) (xy 88.9 110.49)) (stroke (width 0.1524) (type default)) (uuid 4c1c0a2d-a1c1-5f3d-bf0e-4b93d538d879))
+(label "GND" (at 88.9 110.49 0) (effects (font (size 1.27 1.27)) (justify left bottom)) (uuid 4cd88b15-3f62-5e49-9721-26fa800bb9ac))
+(symbol (lib_id "Transistor_BJT:Q_NPN_BCE") (at 139.7 76.2 0) (unit 1) (in_bom yes) (on_board yes) (dnp no) (uuid eb8f2c7f-12d8-5994-b727-f464da8435ce)
+(property "Reference" "Q1" (at 162.7 74.2 0) (effects (font (size 1.27 1.27))))
+(property "Value" "PN2222 / 2N2222A" (at 162.7 78.2 0) (effects (font (size 1.27 1.27))))
+(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline_Wide" (at 139.7 76.2 0) (effects (font (size 1.27 1.27)) (hide yes)))
+(pin "1" (uuid a80c4ffd-74d3-5e1d-b114-26f77336412c))
+(pin "2" (uuid ef801641-4696-53e3-b64e-cfed1f2cd541))
+(pin "3" (uuid e200d7ae-033e-5023-bebb-5522d94dbafb))
+(instances (project "buzzer-driver" (path "/cb437a7e-893b-5720-a20b-22458b306832" (reference "Q1") (unit 1)))))
+(wire (pts (xy 134.62 76.2) (xy 127.0 76.2)) (stroke (width 0.1524) (type default)) (uuid 0a280445-69da-5010-87ac-d5e00f797231))
+(label "BASE" (at 127.0 76.2 0) (effects (font (size 1.27 1.27)) (justify left bottom)) (uuid 4c5f0cf8-9adb-5001-b1b2-1fd1c19496ac))
+(wire (pts (xy 142.24 71.12) (xy 142.24 63.5)) (stroke (width 0.1524) (type default)) (uuid 30bf5e85-a259-5363-ac9c-aa8416970748))
+(label "SWITCHED" (at 142.24 63.5 0) (effects (font (size 1.27 1.27)) (justify left bottom)) (uuid 5e340ab9-2405-565d-aade-c690f9be26fe))
+(wire (pts (xy 142.24 81.28) (xy 142.24 88.9)) (stroke (width 0.1524) (type default)) (uuid 97be598e-32dc-5b04-bfb6-2bcacbba503e))
+(label "GND" (at 142.24 88.9 0) (effects (font (size 1.27 1.27)) (justify left bottom)) (uuid 21ad4036-f504-5575-8ebe-b61d950645ca))
+(symbol (lib_id "Device:D") (at 190.5 101.6 0) (unit 1) (in_bom yes) (on_board yes) (dnp no) (uuid 08b9f4f4-5d68-5b86-a796-a51e9f41c7ad)
+(property "Reference" "D1" (at 190.5 91.6 0) (effects (font (size 1.27 1.27))))
+(property "Value" "1N4007" (at 190.5 94.6 0) (effects (font (size 1.27 1.27))))
+(property "Footprint" "Diode_THT:D_DO-41_SOD81_P10.16mm_Horizontal" (at 190.5 101.6 0) (effects (font (size 1.27 1.27)) (hide yes)))
+(pin "1" (uuid 88e99b40-7919-5e4b-9392-918f980d3732))
+(pin "2" (uuid 5d4ce47f-8946-54b2-b255-c2c077ffb13d))
+(instances (project "buzzer-driver" (path "/cb437a7e-893b-5720-a20b-22458b306832" (reference "D1") (unit 1)))))
+(wire (pts (xy 186.69 101.6) (xy 179.07 101.6)) (stroke (width 0.1524) (type default)) (uuid e0676d6a-21f0-5084-b72a-147ab4056796))
+(label "+5V" (at 179.07 101.6 0) (effects (font (size 1.27 1.27)) (justify left bottom)) (uuid d8bdc068-1f3a-5a2c-b989-ca6b9ed0fde2))
+(wire (pts (xy 194.31 101.6) (xy 201.93 101.6)) (stroke (width 0.1524) (type default)) (uuid ee55ad84-a589-5daf-bb29-1356f5be6ea7))
+(label "SWITCHED" (at 201.93 101.6 0) (effects (font (size 1.27 1.27)) (justify left bottom)) (uuid 006cfb84-b326-5d6c-b605-225581e623e1))
+(symbol (lib_id "Device:Buzzer") (at 190.5 50.8 0) (unit 1) (in_bom yes) (on_board yes) (dnp no) (uuid 5ccb0c38-8bcf-599d-b771-5493a4713f3b)
+(property "Reference" "BZ1" (at 190.5 40.8 0) (effects (font (size 1.27 1.27))))
+(property "Value" "5V ACTIVE - PLACEHOLDER" (at 190.5 43.8 0) (effects (font (size 1.27 1.27))))
+(property "Footprint" "Buzzer_Beeper:Buzzer_12x9.5RM7.6" (at 190.5 50.8 0) (effects (font (size 1.27 1.27)) (hide yes)))
+(pin "1" (uuid cb6042da-83f2-514e-9cad-b8be5c1c04a4))
+(pin "2" (uuid 24b01bf5-9251-5656-8a67-c6e50605ec3c))
+(instances (project "buzzer-driver" (path "/cb437a7e-893b-5720-a20b-22458b306832" (reference "BZ1") (unit 1)))))
+(wire (pts (xy 187.96 48.26) (xy 180.34 48.26)) (stroke (width 0.1524) (type default)) (uuid f39eda71-0e79-52a8-a0ac-dcf2dc281cff))
+(label "+5V" (at 180.34 48.26 0) (effects (font (size 1.27 1.27)) (justify left bottom)) (uuid 5cb560d6-2404-5a1d-833f-94f0bb7d323e))
+(wire (pts (xy 187.96 53.34) (xy 180.34 53.34)) (stroke (width 0.1524) (type default)) (uuid 8447d4dc-80c4-5c47-a398-5011bceeee09))
+(label "SWITCHED" (at 180.34 53.34 0) (effects (font (size 1.27 1.27)) (justify left bottom)) (uuid 76902655-28d8-5028-9335-62e6def303ed))
+(text "PCB Design - Fabrication Not Validated" (at 30.48 139.7 0) (effects (font (size 1.27 1.27)) (justify left bottom)) (uuid 676018de-5bc4-55bf-b055-80d3f3a72b73))
+(text "J1: 1=D8, 2=+5V, 3=GND. Daughterboard connects by wires; not a Mega shield." (at 30.48 144.78 0) (effects (font (size 1.27 1.27)) (justify left bottom)) (uuid eb8316b2-9db8-5828-b9f3-b1dcef9db651))
+(text "Q1 PCB pads: 1=B, 2=C, 3=E. Match the tested wiring to this footprint before assembly." (at 30.48 149.85999999999999 0) (effects (font (size 1.27 1.27)) (justify left bottom)) (uuid a1347c9b-dbf9-57e1-a2d9-e8e06859860a))
+(text "BZ1 placeholder: 12 mm body, 7.6 mm pitch, pad 1=positive. Actual part dimensions are unverified." (at 30.48 154.94 0) (effects (font (size 1.27 1.27)) (justify left bottom)) (uuid db33ff46-df39-5cbe-8980-dbd792b819be))
+(text "D1 cathode (pad 1 / band) connects to +5V. No external D13 LED circuit." (at 30.48 160.01999999999998 0) (effects (font (size 1.27 1.27)) (justify left bottom)) (uuid 7700abd9-5866-51d9-afbf-849557bd0087))
+(text "Same-name net labels are electrically connected. BUZZ firmware and all application code are unchanged." (at 30.48 165.1 0) (effects (font (size 1.27 1.27)) (justify left bottom)) (uuid 5cc4107b-7bdc-5fd4-87bd-4f113636203d))
+(embedded_fonts no))

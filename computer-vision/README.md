@@ -1,6 +1,6 @@
 # Vision subsystem — live Java gesture control
 
-Tracking, pinch detection and calibration preview can run independently. Add `--connect-java` to send calibrated selections to the localhost Java server. The current [projector-ready guide](../docs/phase7a-projector-ready.md) covers presentation mode; the [Phase 4C technical record](../docs/phase4c-live-control.md) describes the original live-control integration. This Python subsystem does not communicate directly with Arduino; the Java game owns optional serial LED feedback.
+Tracking, pinch detection and calibration preview can run independently. Add `--connect-java` to send calibrated selections to the localhost Java server. The current [projector-ready guide](../docs/projector-setup.md) covers presentation mode; the [Phase 4C technical record](../docs/archive/phase4c-live-control.md) describes the original live-control integration. This Python subsystem does not communicate directly with Arduino; the Java game owns optional serial LED feedback.
 
 The preview detects at most one hand, draws its 21 landmarks and 21 connections, highlights index fingertip 8 in yellow, and shows its pixel X/Y coordinates and smoothed processing FPS. Press Q (or close the preview window) to exit. Focus the preview window for keyboard input.
 
@@ -19,7 +19,7 @@ Alternatively, use the Python 3.12 Windows installer from https://www.python.org
 For a fresh installation:
 
 ```powershell
-Set-Location 'C:\path\to\Interactive-Projection-Guess-Who\computer-vision'
+Set-Location 'C:\path\to\gesture-controlled-tabletop-interface\computer-vision'
 py -3.12 -m venv .venv
 .\.venv\Scripts\python.exe -m pip install --upgrade pip
 .\.venv\Scripts\python.exe -m pip install -r requirements.txt
@@ -180,7 +180,7 @@ Normal startup diagnostics may also appear in the terminal.
 ### PowerShell commands
 
 ```powershell
-Set-Location 'C:\path\to\Interactive-Projection-Guess-Who\computer-vision'
+Set-Location 'C:\path\to\gesture-controlled-tabletop-interface\computer-vision'
 .\.venv\Scripts\python.exe main.py
 .\.venv\Scripts\python.exe -m unittest discover -s tests -v
 ```
@@ -253,7 +253,7 @@ uncalibrated Phase 2. Use simulation mode to enable viewport-coordinate output.
 ### Exact Windows PowerShell commands
 
 ```powershell
-Set-Location 'C:\path\to\Interactive-Projection-Guess-Who\computer-vision'
+Set-Location 'C:\path\to\gesture-controlled-tabletop-interface\computer-vision'
 .\.venv\Scripts\python.exe main.py --simulate --calibrate
 ```
 

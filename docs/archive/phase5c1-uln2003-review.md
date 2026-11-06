@@ -1,6 +1,8 @@
 # Phase 5C-1: ULN2003 alternative — archived, not selected
 
-**Archived research only.** The finalized project retains the transistor design as **Designed — Hardware Validation Pending**. No further module investigation, photographs, purchase or wiring action is requested. The historical assessment below is not the selected implementation.
+> Historical record: the owner has since confirmed working PN2222 wiring and buzzer operation. Earlier pending-validation statements below describe the old status.
+
+**Archived research only.** At the time of this record, the transistor circuit was pending validation; the owner has since confirmed it works. No further module investigation, photographs, purchase or wiring action is requested. The historical assessment below is not the selected implementation.
 
 ## Historical assessment
 
@@ -10,7 +12,7 @@ A ULN2003A channel is electrically suitable in principle for switching the docum
 
 The [official ELEGOO kit download](https://www.elegoo.com/blogs/arduino-projects/elegoo-mega-2560-the-most-complete-starter-kit-tutorial), version V1.0.2023.05.05, contains `##Datasheet/Lesson 31 ULN2003A Stepper motor driver.pdf`. Its illustrated board has IN1–IN4 inputs, motor outputs A–D and V+, a motor-power jumper, and +/− power connections. It specifies 5–12 V supply and up to 500 mA per output. This identifies the documented board, not necessarily the user's revision. Use only 5 V for this buzzer.
 
-The kit's [active buzzer datasheet](phase5c1-elegoo-active-buzzer-datasheet.pdf) specifies nominal 5 V, operating 3.5–5.5 V and current less than 25 mA. That does not establish compliance with a 20 mA direct GPIO limit.
+The kit's [active buzzer datasheet](../phase5c1-elegoo-active-buzzer-datasheet.pdf) specifies nominal 5 V, operating 3.5–5.5 V and current less than 25 mA. That does not establish compliance with a 20 mA direct GPIO limit.
 
 The [TI ULN2003A datasheet](https://www.ti.com/lit/ds/symlink/uln2003a.pdf) specifies low-side Darlington outputs, 500 mA single-output capability, 2.7 kΩ input resistors for TTL/5 V CMOS, and common-cathode clamp diodes. The board carries the buzzer current; D8 supplies only control current. The 500 mA figure is not a simultaneous all-channel allowance. A Darlington has a voltage drop, so the buzzer receives less than the supply voltage and may be quieter. Operation at the buzzer's minimum voltage must not be guaranteed under all USB supply conditions.
 
@@ -36,6 +38,6 @@ The datasheet does not establish trigger polarity explicitly. Verify polarity be
 
 ## Software and verification
 
-No Arduino, Java or Python source changed for this review. Existing PING, LED_ON, LED_OFF, BLINK and BUZZ remain intact. BUZZ acknowledges acceptance with ACK BUZZ and pulses D8 HIGH for 180 ms. Existing upload/manual test instructions remain in [the Phase 5C-1 guide](phase5c1-active-buzzer.md).
+No Arduino, Java or Python source changed for this review. Existing PING, LED_ON, LED_OFF, BLINK and BUZZ remain intact. BUZZ acknowledges acceptance with ACK BUZZ and pulses D8 HIGH for 180 ms. Existing upload/manual test instructions remain in [the Phase 5C-1 guide](../buzzer-design.md).
 
 Performed: reviewed the kit module PDF and its connector illustration, checked the ULN2003A manufacturer specifications and the alternative module's manufacturer datasheet. No physical wiring, voltage/current measurement, upload or buzzer test was performed. No software tests were rerun for this documentation-only change. Physical testing remains pending board identification and final wiring approval based on that evidence.

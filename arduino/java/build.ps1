@@ -20,7 +20,7 @@ try {
         & java -cp "build;$jar" phase5b1.ArduinoSerialControllerTest
         if ($LASTEXITCODE -ne 0) { throw 'Hardware-free tests failed.' }
     }
-    Write-Host 'Build complete. See docs/phase5b1-java-arduino-test.md for run commands.'
+    Write-Host 'Build complete. See docs/serial-test.md for run commands.'
 } finally {
     Pop-Location
 }

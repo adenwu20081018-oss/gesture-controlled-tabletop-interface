@@ -1,10 +1,10 @@
 # Pin connections — Phase 6A
 
-**DESIGNED — HARDWARE VALIDATION PENDING.** These are electrical functions, not a physical lead map for the transistor marked `2N2222A 331`. No left/middle/right assignment, numbered package pins or footprint is approved. Display the assembly unpowered, with USB and all other supplies disconnected.
+**Working circuit — owner tested.** The owner confirmed successful PN2222 wiring and buzzer operation. This schedule labels electrical functions; it does not impose a new left/middle/right lead orientation. PCB footprint fit and assembled-board testing remain separate from the working wired circuit.
 
 | From | To | Meaning |
 | --- | --- | --- |
-| Computer USB | Mega USB socket | Existing serial data and USB power; disconnect for display |
+| Computer USB | Mega USB socket | Existing serial data and USB power; disconnect before rewiring |
 | Mega D8 | R1 input | Buzzer-control output; never directly to the buzzer |
 | R1 output | Q1 B and R2 top | 470Ω series base drive |
 | R2 bottom | Q1 E / Mega GND | 10kΩ pull-down |
@@ -17,9 +17,11 @@ Q1 B = base, C = collector, E = emitter. Pin identifiers in the editable schemat
 
 ## Reading the wiring plan
 
-![Wiring plan](images/arduino-wiring.png)
+![Wiring plan](images/arduino-wiring.svg)
 
-Red is +5V; teal is the D8/base signal; purple is the switched negative node; dark wires are ground/return. Junction dots identify joins; crossings without dots do not connect. Rows 10, 20, 24 and 30 illustrate BASE, SWITCHED−, BUZZ+ and GND respectively. Within a row, a–e connect together; f–j form a separate group. These example breadboard rows do not assign transistor legs. The transistor is deliberately shown as a functional block: do not infer a package orientation from the drawing. The USB label denotes the board's USB connector, not loose wires to a breadboard.
+Red is +5V; teal is the D8/base signal; purple is the switched negative node; dark wires are ground/return. The drawing is a functional connection schedule, not a physical breadboard layout. It deliberately assigns no breadboard rows or transistor package positions. Each boxed endpoint lists terminals on the same net; use the schematic to see the complete circuit. R2 bridges the base and ground nets. The USB label denotes the board's USB socket.
+
+The earlier Phase 5C breadboard illustrations remain historical planning references, not a verified placement guide. The current connection schedule replaces the stylized board/breadboard illustration in the portfolio.
 
 ## Interfaces outside the breadboard
 

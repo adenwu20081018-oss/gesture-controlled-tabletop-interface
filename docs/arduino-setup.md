@@ -5,7 +5,7 @@ This standalone sketch tests an ELEGOO MEGA 2560 (Arduino Mega 2560 compatible) 
 ## Files
 
 - `arduino/serial_test/serial_test.ino` — complete Arduino sketch.
-- `docs/phase5a-arduino-test.md` — this upload, test, and troubleshooting guide.
+- `docs/arduino-setup.md` — this upload, test, and troubleshooting guide.
 
 ## Upload with Arduino IDE 2
 

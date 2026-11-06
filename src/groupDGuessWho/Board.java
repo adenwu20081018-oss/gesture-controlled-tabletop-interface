@@ -117,26 +117,26 @@ public class Board implements ActionListener {
 
     // Images & Texts
     private JLabel AIProfile_label = new JLabel();
-    private ImageIcon AIProfile = new ImageIcon("AIProfile.png");
+    private ImageIcon AIProfile = new ImageIcon("assets/interface/AIProfile.png");
     private JLabel AIText_label = new JLabel();
-    private ImageIcon AIText = new ImageIcon("AIText.png");
+    private ImageIcon AIText = new ImageIcon("assets/interface/AIText.png");
     private JLabel playerProfile_label = new JLabel();
-    private ImageIcon playerProfile = new ImageIcon("playerProfile.png");
+    private ImageIcon playerProfile = new ImageIcon("assets/interface/playerProfile.png");
     private JLabel playerTextLong_label = new JLabel();
-    private ImageIcon playerTextLong = new ImageIcon("playerTextLong.png");
+    private ImageIcon playerTextLong = new ImageIcon("assets/interface/playerTextLong.png");
     private JLabel playerTextShort_label = new JLabel();
-    private ImageIcon playerTextShort = new ImageIcon("playerTextShort.png");
-    private ImageIcon revokeImage = new ImageIcon("revoke.png");
-    private ImageIcon x62ButtonImage = new ImageIcon("62x100Button.png");
-    private ImageIcon x83ButtonImage = new ImageIcon("83x100Button.png");
-    private ImageIcon x100ButtonImage = new ImageIcon("100x100Button.png");
-    private ImageIcon x166ButtonImage = new ImageIcon("166x100Button.png");
-    private ImageIcon x250ButtonImage = new ImageIcon("250x100Button.png");
-    private ImageIcon x300ButtonImage = new ImageIcon("300x100Button.png");
-    private ImageIcon x600ButtonImage = new ImageIcon("600x100Button.png");
+    private ImageIcon playerTextShort = new ImageIcon("assets/interface/playerTextShort.png");
+    private ImageIcon revokeImage = new ImageIcon("assets/buttons/revoke.png");
+    private ImageIcon x62ButtonImage = new ImageIcon("assets/buttons/button-62x100.png");
+    private ImageIcon x83ButtonImage = new ImageIcon("assets/buttons/button-83x100.png");
+    private ImageIcon x100ButtonImage = new ImageIcon("assets/buttons/button-100x100.png");
+    private ImageIcon x166ButtonImage = new ImageIcon("assets/buttons/button-166x100.png");
+    private ImageIcon x250ButtonImage = new ImageIcon("assets/buttons/button-250x100.png");
+    private ImageIcon x300ButtonImage = new ImageIcon("assets/buttons/button-300x100.png");
+    private ImageIcon x600ButtonImage = new ImageIcon("assets/buttons/button-600x100.png");
     
     private JButton healthDisplayImage_button = new JButton();
-    private ImageIcon batteryImage = new ImageIcon("battery.png");
+    private ImageIcon batteryImage = new ImageIcon("assets/interface/battery.png");
     private JLabel batteryImage_label = new JLabel();
 
     private boolean virusOn = false;
@@ -153,8 +153,8 @@ public class Board implements ActionListener {
     private int roundWinner = -1;
     
     // Audio
-    String filePathIntro = "Intro.wav";
-    String filePath = "Suspicion_Matrix.wav";
+    String filePathIntro = "assets/audio/Intro.wav";
+    String filePath = "assets/audio/Suspicion_Matrix.wav";
     Player play = new Player();
 
     // Constructor, to initialize and setup everything
@@ -532,7 +532,7 @@ public class Board implements ActionListener {
         health_panel.add(playerHealthDisplay, BorderLayout.SOUTH);
         
         JButtonSetUp(healthDisplayImage_button, 1, "");
-        healthDisplayImage_button.setIcon(new ImageIcon("healthDisplayOff.png"));
+        healthDisplayImage_button.setIcon(new ImageIcon("assets/buttons/health-display-off.png"));
         health_panel.add(healthDisplayImage_button, BorderLayout.CENTER);
         
         startGame.setBorder(new LineBorder(Color.GRAY,0));
@@ -542,10 +542,10 @@ public class Board implements ActionListener {
         startGame.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                playSound("characterClick.wav"); // Replace with your sound file path
+                playSound("assets/audio/characterClick.wav"); // Replace with your sound file path
             }
         });
-        startGame.setIcon(new ImageIcon("title.png"));
+        startGame.setIcon(new ImageIcon("assets/buttons/title.png"));
         mainMenu_panel.add(startGame, BorderLayout.CENTER);
         
         returnToMainMenu.setBorder(new LineBorder(Color.GRAY,0));
@@ -555,7 +555,7 @@ public class Board implements ActionListener {
         returnToMainMenu.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                playSound("characterClick.wav"); // Replace with your sound file path
+                playSound("assets/audio/characterClick.wav"); // Replace with your sound file path
             }
         });
         
@@ -754,17 +754,17 @@ public class Board implements ActionListener {
         	if (startGameStatus == 0){
         		play.stopMusic();
         		play.playMusic(filePath);
-        		startGame.setIcon(new ImageIcon("Intro1.png"));
+        		startGame.setIcon(new ImageIcon("assets/buttons/intro-1.png"));
         	}else if (startGameStatus == 1){
-        		startGame.setIcon(new ImageIcon("Intro2.png"));
+        		startGame.setIcon(new ImageIcon("assets/buttons/intro-2.png"));
         	}else if (startGameStatus == 2){
-        		startGame.setIcon(new ImageIcon("Intro3.png"));
+        		startGame.setIcon(new ImageIcon("assets/buttons/intro-3.png"));
         	}else if (startGameStatus == 3){
-        		startGame.setIcon(new ImageIcon("Intro4.png"));
+        		startGame.setIcon(new ImageIcon("assets/buttons/intro-4.png"));
         	}else if (startGameStatus == 4){
         		mainMenu_panel.setVisible(false);
                 inGamePanelsVisible(true);
-        		startGame.setIcon(new ImageIcon("title.png"));
+        		startGame.setIcon(new ImageIcon("assets/buttons/title.png"));
         	}
         	startGameStatus++;
         }
@@ -925,7 +925,7 @@ public class Board implements ActionListener {
                             // Player guessed correctly
                     		if (AIHealth == 20){
                     			AIText_label.setText("...I guess you did it, but I'll be back");
-                    			healthDisplayImage_button.setIcon(new ImageIcon("healthDisplayOn.png"));
+                    			healthDisplayImage_button.setIcon(new ImageIcon("assets/buttons/health-display-on.png"));
                                 playerTextShort_label.setText("...This is it.");
                     		} else {
 	                            AIText_label.setText(charactersOnScreen.get(i).getName()+" is my agent, not bad.");
@@ -1041,7 +1041,7 @@ public class Board implements ActionListener {
     	button.addActionListener(new ActionListener() {
     	    @Override
     	    public void actionPerformed(ActionEvent e) {
-    	        playSound("buttonClick.wav"); 
+    	        playSound("assets/audio/buttonClick.wav"); 
     	    }
     	});
     }
@@ -1166,15 +1166,15 @@ public class Board implements ActionListener {
      * @param AIwins = true or false, AI wins or AI loses
      */
     public void resultMenuOn(boolean AIwins) {
-    	healthDisplayImage_button.setIcon(new ImageIcon("healthDisplayOff.png"));
+    	healthDisplayImage_button.setIcon(new ImageIcon("assets/buttons/health-display-off.png"));
     	continueSmall_panel.setVisible(false);
     	playerTextShort_panel.setVisible(false);
     	playerAnswer_panel.setVisible(false);
         inGamePanelsVisible(false);
         if (AIwins) { // AI WINS
-        	returnToMainMenu.setIcon(new ImageIcon("lose.png"));
+        	returnToMainMenu.setIcon(new ImageIcon("assets/buttons/lose.png"));
         } else { // PLAYER WINS
-        	returnToMainMenu.setIcon(new ImageIcon("win.png"));
+        	returnToMainMenu.setIcon(new ImageIcon("assets/buttons/win.png"));
         }
         result_panel.setVisible(true);
     }
@@ -1582,300 +1582,300 @@ public class Board implements ActionListener {
     public void setUpImage(int i, String variant) {
     	if ((charactersOnScreen.get(i).getName()).equals("AD01")) {
     		if (variant.equals("default")) {
-    			characterDisplay[i].setIcon(new ImageIcon("AD01.png"));
+    			characterDisplay[i].setIcon(new ImageIcon("assets/characters/AD01.png"));
     		} else if (variant.equals("exclude")) {
-                characterDisplay[i].setIcon(new ImageIcon("AD01exclude.png"));
+                characterDisplay[i].setIcon(new ImageIcon("assets/characters/AD01exclude.png"));
         	} else {
-        		characterDisplay[i].setIcon(new ImageIcon("AD01target.png"));
+        		characterDisplay[i].setIcon(new ImageIcon("assets/characters/AD01target.png"));
         	}
         } else if ((charactersOnScreen.get(i).getName()).equals("AX02")) {
             if (variant.equals("default")) {
-    			characterDisplay[i].setIcon(new ImageIcon("AX02.png"));
+    			characterDisplay[i].setIcon(new ImageIcon("assets/characters/AX02.png"));
     		} else if (variant.equals("exclude")) {
-                characterDisplay[i].setIcon(new ImageIcon("AX02exclude.png"));
+                characterDisplay[i].setIcon(new ImageIcon("assets/characters/AX02exclude.png"));
         	} else {
-        		characterDisplay[i].setIcon(new ImageIcon("AX02target.png"));
+        		characterDisplay[i].setIcon(new ImageIcon("assets/characters/AX02target.png"));
         	}
         } else if ((charactersOnScreen.get(i).getName()).equals("AY03")) {
         	if (variant.equals("default")) {
-    			characterDisplay[i].setIcon(new ImageIcon("AY03.png"));
+    			characterDisplay[i].setIcon(new ImageIcon("assets/characters/AY03.png"));
     		} else if (variant.equals("exclude")) {
-                characterDisplay[i].setIcon(new ImageIcon("AY03exclude.png"));
+                characterDisplay[i].setIcon(new ImageIcon("assets/characters/AY03exclude.png"));
         	} else {
-        		characterDisplay[i].setIcon(new ImageIcon("AY03target.png"));
+        		characterDisplay[i].setIcon(new ImageIcon("assets/characters/AY03target.png"));
         	}
             
         } else if ((charactersOnScreen.get(i).getName()).equals("AA04")) {
         	if (variant.equals("default")) {
-    			characterDisplay[i].setIcon(new ImageIcon("AA04.png"));
+    			characterDisplay[i].setIcon(new ImageIcon("assets/characters/AA04.png"));
     		} else if (variant.equals("exclude")) {
-                characterDisplay[i].setIcon(new ImageIcon("AA04exclude.png"));
+                characterDisplay[i].setIcon(new ImageIcon("assets/characters/AA04exclude.png"));
         	} else {
-        		characterDisplay[i].setIcon(new ImageIcon("AA04target.png"));
+        		characterDisplay[i].setIcon(new ImageIcon("assets/characters/AA04target.png"));
         	}
         } else if ((charactersOnScreen.get(i).getName()).equals("AE05")) {
         	if (variant.equals("default")) {
-    			characterDisplay[i].setIcon(new ImageIcon("AE05.png"));
+    			characterDisplay[i].setIcon(new ImageIcon("assets/characters/AE05.png"));
     		} else if (variant.equals("exclude")) {
-                characterDisplay[i].setIcon(new ImageIcon("AE05exclude.png"));
+                characterDisplay[i].setIcon(new ImageIcon("assets/characters/AE05exclude.png"));
         	} else {
-        		characterDisplay[i].setIcon(new ImageIcon("AE05target.png"));
+        		characterDisplay[i].setIcon(new ImageIcon("assets/characters/AE05target.png"));
         	}
         } else if ((charactersOnScreen.get(i).getName()).equals("BN06")) {
         	if (variant.equals("default")) {
-    			characterDisplay[i].setIcon(new ImageIcon("BN06.png"));
+    			characterDisplay[i].setIcon(new ImageIcon("assets/characters/BN06.png"));
     		} else if (variant.equals("exclude")) {
-                characterDisplay[i].setIcon(new ImageIcon("BN06exclude.png"));
+                characterDisplay[i].setIcon(new ImageIcon("assets/characters/BN06exclude.png"));
         	} else {
-        		characterDisplay[i].setIcon(new ImageIcon("BN06target.png"));
+        		characterDisplay[i].setIcon(new ImageIcon("assets/characters/BN06target.png"));
         	}
         } else if ((charactersOnScreen.get(i).getName()).equals("BD07")) {
         	if (variant.equals("default")) {
-    			characterDisplay[i].setIcon(new ImageIcon("BD07.png"));
+    			characterDisplay[i].setIcon(new ImageIcon("assets/characters/BD07.png"));
     		} else if (variant.equals("exclude")) {
-                characterDisplay[i].setIcon(new ImageIcon("BD07exclude.png"));
+                characterDisplay[i].setIcon(new ImageIcon("assets/characters/BD07exclude.png"));
         	} else {
-        		characterDisplay[i].setIcon(new ImageIcon("BD07target.png"));
+        		characterDisplay[i].setIcon(new ImageIcon("assets/characters/BD07target.png"));
         	}
         } else if ((charactersOnScreen.get(i).getName()).equals("BY08")) {
         	if (variant.equals("default")) {
-    			characterDisplay[i].setIcon(new ImageIcon("BY08.png"));
+    			characterDisplay[i].setIcon(new ImageIcon("assets/characters/BY08.png"));
     		} else if (variant.equals("exclude")) {
-                characterDisplay[i].setIcon(new ImageIcon("BY08exclude.png"));
+                characterDisplay[i].setIcon(new ImageIcon("assets/characters/BY08exclude.png"));
         	} else {
-        		characterDisplay[i].setIcon(new ImageIcon("BY08target.png"));
+        		characterDisplay[i].setIcon(new ImageIcon("assets/characters/BY08target.png"));
         	}        
         } else if ((charactersOnScreen.get(i).getName()).equals("BL09")) {
         	if (variant.equals("default")) {
-    			characterDisplay[i].setIcon(new ImageIcon("BL09.png"));
+    			characterDisplay[i].setIcon(new ImageIcon("assets/characters/BL09.png"));
     		} else if (variant.equals("exclude")) {
-                characterDisplay[i].setIcon(new ImageIcon("BL09exclude.png"));
+                characterDisplay[i].setIcon(new ImageIcon("assets/characters/BL09exclude.png"));
         	} else {
-        		characterDisplay[i].setIcon(new ImageIcon("BL09target.png"));
+        		characterDisplay[i].setIcon(new ImageIcon("assets/characters/BL09target.png"));
         	}
         } else if ((charactersOnScreen.get(i).getName()).equals("CN10")) {
         	if (variant.equals("default")) {
-    			characterDisplay[i].setIcon(new ImageIcon("CN10.png"));
+    			characterDisplay[i].setIcon(new ImageIcon("assets/characters/CN10.png"));
     		} else if (variant.equals("exclude")) {
-                characterDisplay[i].setIcon(new ImageIcon("CN10exclude.png"));
+                characterDisplay[i].setIcon(new ImageIcon("assets/characters/CN10exclude.png"));
         	} else {
-        		characterDisplay[i].setIcon(new ImageIcon("CN10target.png"));
+        		characterDisplay[i].setIcon(new ImageIcon("assets/characters/CN10target.png"));
         	}
         } else if ((charactersOnScreen.get(i).getName()).equals("CS11")) {
         	if (variant.equals("default")) {
-    			characterDisplay[i].setIcon(new ImageIcon("CS11.png"));
+    			characterDisplay[i].setIcon(new ImageIcon("assets/characters/CS11.png"));
     		} else if (variant.equals("exclude")) {
-                characterDisplay[i].setIcon(new ImageIcon("CS11exclude.png"));
+                characterDisplay[i].setIcon(new ImageIcon("assets/characters/CS11exclude.png"));
         	} else {
-        		characterDisplay[i].setIcon(new ImageIcon("CS11target.png"));
+        		characterDisplay[i].setIcon(new ImageIcon("assets/characters/CS11target.png"));
         	}
         } else if ((charactersOnScreen.get(i).getName()).equals("CE12")) {
         	if (variant.equals("default")) {
-    			characterDisplay[i].setIcon(new ImageIcon("CE12.png"));
+    			characterDisplay[i].setIcon(new ImageIcon("assets/characters/CE12.png"));
     		} else if (variant.equals("exclude")) {
-                characterDisplay[i].setIcon(new ImageIcon("CE12exclude.png"));
+                characterDisplay[i].setIcon(new ImageIcon("assets/characters/CE12exclude.png"));
         	} else {
-        		characterDisplay[i].setIcon(new ImageIcon("CE12target.png"));
+        		characterDisplay[i].setIcon(new ImageIcon("assets/characters/CE12target.png"));
         	}
         } else if ((charactersOnScreen.get(i).getName()).equals("DL13")) {
         	if (variant.equals("default")) {
-    			characterDisplay[i].setIcon(new ImageIcon("DL13.png"));
+    			characterDisplay[i].setIcon(new ImageIcon("assets/characters/DL13.png"));
     		} else if (variant.equals("exclude")) {
-                characterDisplay[i].setIcon(new ImageIcon("DL13exclude.png"));
+                characterDisplay[i].setIcon(new ImageIcon("assets/characters/DL13exclude.png"));
         	} else {
-        		characterDisplay[i].setIcon(new ImageIcon("DL13target.png"));
+        		characterDisplay[i].setIcon(new ImageIcon("assets/characters/DL13target.png"));
         	}
         } else if ((charactersOnScreen.get(i).getName()).equals("DD14")) {
         	if (variant.equals("default")) {
-    			characterDisplay[i].setIcon(new ImageIcon("DD14.png"));
+    			characterDisplay[i].setIcon(new ImageIcon("assets/characters/DD14.png"));
     		} else if (variant.equals("exclude")) {
-                characterDisplay[i].setIcon(new ImageIcon("DD14exclude.png"));
+                characterDisplay[i].setIcon(new ImageIcon("assets/characters/DD14exclude.png"));
         	} else {
-        		characterDisplay[i].setIcon(new ImageIcon("DD14target.png"));
+        		characterDisplay[i].setIcon(new ImageIcon("assets/characters/DD14target.png"));
         	}
         } else if ((charactersOnScreen.get(i).getName()).equals("EA15")) {
         	if (variant.equals("default")) {
-    			characterDisplay[i].setIcon(new ImageIcon("EA15.png"));
+    			characterDisplay[i].setIcon(new ImageIcon("assets/characters/EA15.png"));
     		} else if (variant.equals("exclude")) {
-                characterDisplay[i].setIcon(new ImageIcon("EA15exclude.png"));
+                characterDisplay[i].setIcon(new ImageIcon("assets/characters/EA15exclude.png"));
         	} else {
-        		characterDisplay[i].setIcon(new ImageIcon("EA15target.png"));
+        		characterDisplay[i].setIcon(new ImageIcon("assets/characters/EA15target.png"));
         	}
         } else if ((charactersOnScreen.get(i).getName()).equals("EC16")) {
         	if (variant.equals("default")) {
-    			characterDisplay[i].setIcon(new ImageIcon("EC16.png"));
+    			characterDisplay[i].setIcon(new ImageIcon("assets/characters/EC16.png"));
     		} else if (variant.equals("exclude")) {
-                characterDisplay[i].setIcon(new ImageIcon("EC16exclude.png"));
+                characterDisplay[i].setIcon(new ImageIcon("assets/characters/EC16exclude.png"));
         	} else {
-        		characterDisplay[i].setIcon(new ImageIcon("EC16target.png"));
+        		characterDisplay[i].setIcon(new ImageIcon("assets/characters/EC16target.png"));
         	}
         } else if ((charactersOnScreen.get(i).getName()).equals("FH17")) {
         	if (variant.equals("default")) {
-    			characterDisplay[i].setIcon(new ImageIcon("FH17.png"));
+    			characterDisplay[i].setIcon(new ImageIcon("assets/characters/FH17.png"));
     		} else if (variant.equals("exclude")) {
-                characterDisplay[i].setIcon(new ImageIcon("FH17exclude.png"));
+                characterDisplay[i].setIcon(new ImageIcon("assets/characters/FH17exclude.png"));
         	} else {
-        		characterDisplay[i].setIcon(new ImageIcon("FH17target.png"));
+        		characterDisplay[i].setIcon(new ImageIcon("assets/characters/FH17target.png"));
         	}
         } else if ((charactersOnScreen.get(i).getName()).equals("FS18")) {
         	if (variant.equals("default")) {
-    			characterDisplay[i].setIcon(new ImageIcon("FS18.png"));
+    			characterDisplay[i].setIcon(new ImageIcon("assets/characters/FS18.png"));
     		} else if (variant.equals("exclude")) {
-                characterDisplay[i].setIcon(new ImageIcon("FS18exclude.png"));
+                characterDisplay[i].setIcon(new ImageIcon("assets/characters/FS18exclude.png"));
         	} else {
-        		characterDisplay[i].setIcon(new ImageIcon("FS18target.png"));
+        		characterDisplay[i].setIcon(new ImageIcon("assets/characters/FS18target.png"));
         	}
         } else if ((charactersOnScreen.get(i).getName()).equals("GE19")) {
         	if (variant.equals("default")) {
-    			characterDisplay[i].setIcon(new ImageIcon("GE19.png"));
+    			characterDisplay[i].setIcon(new ImageIcon("assets/characters/GE19.png"));
     		} else if (variant.equals("exclude")) {
-                characterDisplay[i].setIcon(new ImageIcon("GE19exclude.png"));
+                characterDisplay[i].setIcon(new ImageIcon("assets/characters/GE19exclude.png"));
         	} else {
-        		characterDisplay[i].setIcon(new ImageIcon("GE19target.png"));
+        		characterDisplay[i].setIcon(new ImageIcon("assets/characters/GE19target.png"));
         	}
         } else if ((charactersOnScreen.get(i).getName()).equals("GE20")) {
         	if (variant.equals("default")) {
-    			characterDisplay[i].setIcon(new ImageIcon("GE20.png"));
+    			characterDisplay[i].setIcon(new ImageIcon("assets/characters/GE20.png"));
     		} else if (variant.equals("exclude")) {
-                characterDisplay[i].setIcon(new ImageIcon("GE20exclude.png"));
+                characterDisplay[i].setIcon(new ImageIcon("assets/characters/GE20exclude.png"));
         	} else {
-        		characterDisplay[i].setIcon(new ImageIcon("GE20target.png"));
+        		characterDisplay[i].setIcon(new ImageIcon("assets/characters/GE20target.png"));
         	}
         } else if ((charactersOnScreen.get(i).getName()).equals("HN21")) {
         	if (variant.equals("default")) {
-    			characterDisplay[i].setIcon(new ImageIcon("HN21.png"));
+    			characterDisplay[i].setIcon(new ImageIcon("assets/characters/HN21.png"));
     		} else if (variant.equals("exclude")) {
-                characterDisplay[i].setIcon(new ImageIcon("HN21exclude.png"));
+                characterDisplay[i].setIcon(new ImageIcon("assets/characters/HN21exclude.png"));
         	} else {
-        		characterDisplay[i].setIcon(new ImageIcon("HN21target.png"));
+        		characterDisplay[i].setIcon(new ImageIcon("assets/characters/HN21target.png"));
         	}
         } else if ((charactersOnScreen.get(i).getName()).equals("HY22")) {
         	if (variant.equals("default")) {
-    			characterDisplay[i].setIcon(new ImageIcon("HY22.png"));
+    			characterDisplay[i].setIcon(new ImageIcon("assets/characters/HY22.png"));
     		} else if (variant.equals("exclude")) {
-                characterDisplay[i].setIcon(new ImageIcon("HY22exclude.png"));
+                characterDisplay[i].setIcon(new ImageIcon("assets/characters/HY22exclude.png"));
         	} else {
-        		characterDisplay[i].setIcon(new ImageIcon("HY22target.png"));
+        		characterDisplay[i].setIcon(new ImageIcon("assets/characters/HY22target.png"));
         	}
         } else if ((charactersOnScreen.get(i).getName()).equals("JE23")) {
         	if (variant.equals("default")) {
-    			characterDisplay[i].setIcon(new ImageIcon("JE23.png"));
+    			characterDisplay[i].setIcon(new ImageIcon("assets/characters/JE23.png"));
     		} else if (variant.equals("exclude")) {
-                characterDisplay[i].setIcon(new ImageIcon("JE23exclude.png"));
+                characterDisplay[i].setIcon(new ImageIcon("assets/characters/JE23exclude.png"));
         	} else {
-        		characterDisplay[i].setIcon(new ImageIcon("JE23target.png"));
+        		characterDisplay[i].setIcon(new ImageIcon("assets/characters/JE23target.png"));
         	}
         } else if ((charactersOnScreen.get(i).getName()).equals("RC24")) {
         	if (variant.equals("default")) {
-    			characterDisplay[i].setIcon(new ImageIcon("RC24.png"));
+    			characterDisplay[i].setIcon(new ImageIcon("assets/characters/RC24.png"));
     		} else if (variant.equals("exclude")) {
-                characterDisplay[i].setIcon(new ImageIcon("RC24exclude.png"));
+                characterDisplay[i].setIcon(new ImageIcon("assets/characters/RC24exclude.png"));
         	} else {
-        		characterDisplay[i].setIcon(new ImageIcon("RC24target.png"));
+        		characterDisplay[i].setIcon(new ImageIcon("assets/characters/RC24target.png"));
         	}
         } else if ((charactersOnScreen.get(i).getName()).equals("KE25")) {
         	if (variant.equals("default")) {
-    			characterDisplay[i].setIcon(new ImageIcon("KE25.png"));
+    			characterDisplay[i].setIcon(new ImageIcon("assets/characters/KE25.png"));
     		} else if (variant.equals("exclude")) {
-                characterDisplay[i].setIcon(new ImageIcon("KE25exclude.png"));
+                characterDisplay[i].setIcon(new ImageIcon("assets/characters/KE25exclude.png"));
         	} else {
-        		characterDisplay[i].setIcon(new ImageIcon("KE25target.png"));
+        		characterDisplay[i].setIcon(new ImageIcon("assets/characters/KE25target.png"));
         	}
         } else if ((charactersOnScreen.get(i).getName()).equals("LA26")) {
         	if (variant.equals("default")) {
-    			characterDisplay[i].setIcon(new ImageIcon("LA26.png"));
+    			characterDisplay[i].setIcon(new ImageIcon("assets/characters/LA26.png"));
     		} else if (variant.equals("exclude")) {
-                characterDisplay[i].setIcon(new ImageIcon("LA26exclude.png"));
+                characterDisplay[i].setIcon(new ImageIcon("assets/characters/LA26exclude.png"));
         	} else {
-        		characterDisplay[i].setIcon(new ImageIcon("LA26target.png"));
+        		characterDisplay[i].setIcon(new ImageIcon("assets/characters/LA26target.png"));
         	}
         } else if ((charactersOnScreen.get(i).getName()).equals("LO27")) {
         	if (variant.equals("default")) {
-    			characterDisplay[i].setIcon(new ImageIcon("LO27.png"));
+    			characterDisplay[i].setIcon(new ImageIcon("assets/characters/LO27.png"));
     		} else if (variant.equals("exclude")) {
-                characterDisplay[i].setIcon(new ImageIcon("LO27exclude.png"));
+                characterDisplay[i].setIcon(new ImageIcon("assets/characters/LO27exclude.png"));
         	} else {
-        		characterDisplay[i].setIcon(new ImageIcon("LO27target.png"));
+        		characterDisplay[i].setIcon(new ImageIcon("assets/characters/LO27target.png"));
         	}
         } else if ((charactersOnScreen.get(i).getName()).equals("LY28")) {
         	if (variant.equals("default")) {
-    			characterDisplay[i].setIcon(new ImageIcon("LY28.png"));
+    			characterDisplay[i].setIcon(new ImageIcon("assets/characters/LY28.png"));
     		} else if (variant.equals("exclude")) {
-                characterDisplay[i].setIcon(new ImageIcon("LY28exclude.png"));
+                characterDisplay[i].setIcon(new ImageIcon("assets/characters/LY28exclude.png"));
         	} else {
-        		characterDisplay[i].setIcon(new ImageIcon("LY28target.png"));
+        		characterDisplay[i].setIcon(new ImageIcon("assets/characters/LY28target.png"));
         	}
         } else if ((charactersOnScreen.get(i).getName()).equals("LZ29")) {
         	if (variant.equals("default")) {
-    			characterDisplay[i].setIcon(new ImageIcon("LZ29.png"));
+    			characterDisplay[i].setIcon(new ImageIcon("assets/characters/LZ29.png"));
     		} else if (variant.equals("exclude")) {
-                characterDisplay[i].setIcon(new ImageIcon("LZ29exclude.png"));
+                characterDisplay[i].setIcon(new ImageIcon("assets/characters/LZ29exclude.png"));
         	} else {
-        		characterDisplay[i].setIcon(new ImageIcon("LZ29target.png"));
+        		characterDisplay[i].setIcon(new ImageIcon("assets/characters/LZ29target.png"));
         	}
         } else if ((charactersOnScreen.get(i).getName()).equals("MA30")) {
         	if (variant.equals("default")) {
-    			characterDisplay[i].setIcon(new ImageIcon("MA30.png"));
+    			characterDisplay[i].setIcon(new ImageIcon("assets/characters/MA30.png"));
     		} else if (variant.equals("exclude")) {
-                characterDisplay[i].setIcon(new ImageIcon("MA30exclude.png"));
+                characterDisplay[i].setIcon(new ImageIcon("assets/characters/MA30exclude.png"));
         	} else {
-        		characterDisplay[i].setIcon(new ImageIcon("MA30target.png"));
+        		characterDisplay[i].setIcon(new ImageIcon("assets/characters/MA30target.png"));
         	}
         } else if ((charactersOnScreen.get(i).getName()).equals("MX31")) {
         	if (variant.equals("default")) {
-    			characterDisplay[i].setIcon(new ImageIcon("MX31.png"));
+    			characterDisplay[i].setIcon(new ImageIcon("assets/characters/MX31.png"));
     		} else if (variant.equals("exclude")) {
-                characterDisplay[i].setIcon(new ImageIcon("MX31exclude.png"));
+                characterDisplay[i].setIcon(new ImageIcon("assets/characters/MX31exclude.png"));
         	} else {
-        		characterDisplay[i].setIcon(new ImageIcon("MX31target.png"));
+        		characterDisplay[i].setIcon(new ImageIcon("assets/characters/MX31target.png"));
         	}
         } else if ((charactersOnScreen.get(i).getName()).equals("MA32")) {
         	if (variant.equals("default")) {
-    			characterDisplay[i].setIcon(new ImageIcon("MA32.png"));
+    			characterDisplay[i].setIcon(new ImageIcon("assets/characters/MA32.png"));
     		} else if (variant.equals("exclude")) {
-                characterDisplay[i].setIcon(new ImageIcon("MA32exclude.png"));
+                characterDisplay[i].setIcon(new ImageIcon("assets/characters/MA32exclude.png"));
         	} else {
-        		characterDisplay[i].setIcon(new ImageIcon("MA32target.png"));
+        		characterDisplay[i].setIcon(new ImageIcon("assets/characters/MA32target.png"));
         	}
         } else if ((charactersOnScreen.get(i).getName()).equals("ME33")) {
         	if (variant.equals("default")) {
-    			characterDisplay[i].setIcon(new ImageIcon("ME33.png"));
+    			characterDisplay[i].setIcon(new ImageIcon("assets/characters/ME33.png"));
     		} else if (variant.equals("exclude")) {
-                characterDisplay[i].setIcon(new ImageIcon("ME33exclude.png"));
+                characterDisplay[i].setIcon(new ImageIcon("assets/characters/ME33exclude.png"));
         	} else {
-        		characterDisplay[i].setIcon(new ImageIcon("ME33target.png"));
+        		characterDisplay[i].setIcon(new ImageIcon("assets/characters/ME33target.png"));
         	}
         } else if ((charactersOnScreen.get(i).getName()).equals("NK34")) {
         	if (variant.equals("default")) {
-    			characterDisplay[i].setIcon(new ImageIcon("NK34.png"));
+    			characterDisplay[i].setIcon(new ImageIcon("assets/characters/NK34.png"));
     		} else if (variant.equals("exclude")) {
-                characterDisplay[i].setIcon(new ImageIcon("NK34exclude.png"));
+                characterDisplay[i].setIcon(new ImageIcon("assets/characters/NK34exclude.png"));
         	} else {
-        		characterDisplay[i].setIcon(new ImageIcon("NK34target.png"));
+        		characterDisplay[i].setIcon(new ImageIcon("assets/characters/NK34target.png"));
         	}
         } else if ((charactersOnScreen.get(i).getName()).equals("QA35")) {
         	if (variant.equals("default")) {
-    			characterDisplay[i].setIcon(new ImageIcon("QA35.png"));
+    			characterDisplay[i].setIcon(new ImageIcon("assets/characters/QA35.png"));
     		} else if (variant.equals("exclude")) {
-                characterDisplay[i].setIcon(new ImageIcon("QA35exclude.png"));
+                characterDisplay[i].setIcon(new ImageIcon("assets/characters/QA35exclude.png"));
         	} else {
-        		characterDisplay[i].setIcon(new ImageIcon("QA35target.png"));
+        		characterDisplay[i].setIcon(new ImageIcon("assets/characters/QA35target.png"));
         	}
         } else if ((charactersOnScreen.get(i).getName()).equals("PL36")) {
         	if (variant.equals("default")) {
-    			characterDisplay[i].setIcon(new ImageIcon("PL36.png"));
+    			characterDisplay[i].setIcon(new ImageIcon("assets/characters/PL36.png"));
     		} else if (variant.equals("exclude")) {
-                characterDisplay[i].setIcon(new ImageIcon("PL36exclude.png"));
+                characterDisplay[i].setIcon(new ImageIcon("assets/characters/PL36exclude.png"));
         	} else {
-        		characterDisplay[i].setIcon(new ImageIcon("PL36target.png"));
+        		characterDisplay[i].setIcon(new ImageIcon("assets/characters/PL36target.png"));
         	}
         } else if ((charactersOnScreen.get(i).getName()).equals("PR37")) {
         	if (variant.equals("default")) {
-    			characterDisplay[i].setIcon(new ImageIcon("PR37.png"));
+    			characterDisplay[i].setIcon(new ImageIcon("assets/characters/PR37.png"));
     		} else if (variant.equals("exclude")) {
-                characterDisplay[i].setIcon(new ImageIcon("PR37exclude.png"));
+                characterDisplay[i].setIcon(new ImageIcon("assets/characters/PR37exclude.png"));
         	} else {
-        		characterDisplay[i].setIcon(new ImageIcon("PR37target.png"));
+        		characterDisplay[i].setIcon(new ImageIcon("assets/characters/PR37target.png"));
         	}
         }
     }
@@ -1902,7 +1902,7 @@ public class Board implements ActionListener {
             characterDisplay[i].addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
-                    playSound("characterClick.wav"); // Replace with your sound file path
+                    playSound("assets/audio/characterClick.wav"); // Replace with your sound file path
                 }
             });
     	}

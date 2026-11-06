@@ -13,7 +13,7 @@ No game or Python/OpenCV files are changed. The Java sources live outside the ga
 | `arduino/java/tests/phase5b1/ArduinoSerialControllerTest.java` | Hardware-free tests against an in-memory serial connection |
 | `arduino/java/build.ps1` | Download/check dependency, compile, optionally run tests |
 | `arduino/java/.gitignore` | Excludes generated JAR and compiled classes from Git |
-| `docs/phase5b1-java-arduino-test.md` | This guide |
+| `docs/serial-test.md` | This guide |
 
 The dependency is downloaded into `arduino/java/lib/`; compiled classes go into `arduino/java/build/`. Neither folder is used by the game.
 
@@ -33,7 +33,7 @@ The build script downloads the JAR if absent and checks this digest on every run
 Open PowerShell and run (change the project path if you moved the folder):
 
 ```powershell
-Set-Location 'C:\path\to\Interactive-Projection-Guess-Who'
+Set-Location 'C:\path\to\gesture-controlled-tabletop-interface'
 java -version
 javac -version
 .\arduino\java\build.ps1 -Test

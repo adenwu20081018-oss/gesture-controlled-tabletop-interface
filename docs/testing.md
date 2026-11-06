@@ -4,7 +4,7 @@ This is a curated summary of recorded project checks, not a CI badge or a claim 
 
 ## Recorded software runs
 
-The Phase 7A runs completed on 2026-10-28 with JDK 17 and the existing Python 3.12 environment:
+The Phase 10 reruns completed on 2026-11-05 with JDK 17 and the existing Python 3.12 environment:
 
 | Suite | Result | Scope |
 | --- | --- | --- |
@@ -15,13 +15,15 @@ The Phase 7A runs completed on 2026-10-28 with JDK 17 and the existing Python 3.
 | Real Board + fake Arduino | 19 normal-mode checks; 22 presentation-mode checks passed | Real game actions, mouse/TCP routes, exactly-once feedback and all 24 cards reachable at tested sizes |
 | Existing mapping/JSON/Swing harness | Passed | Mapping round-trips, strict parsing and hidden/disabled/covered controls |
 
-Earlier Phase 5C-1 evidence records a successful Mega-target compile (3,478 bytes flash, 265 bytes SRAM) and 32 hardware-free firmware checks. See [the firmware test record](phase5c1-test-results.txt). Those checks were not rerun for the portfolio documentation.
+Earlier Phase 5C-1 evidence records a successful Mega-target compile (3,478 bytes flash, 265 bytes SRAM) and 32 hardware-free firmware checks. See [the firmware test record](archive/phase5c1-test-results.txt). Those checks were not rerun for the portfolio documentation.
 
 No new software feature or game logic changed in Phase 8. The portfolio work checked documentation links, image decoding and the proposed Git file set; it captured three real Swing views without opening a physical serial port or camera.
 
+The new `AssetLoadingTest` decodes every PNG and WAV in `assets/`, checks loaded icons across the title, four introduction screens, game and both results, and exercises every character portrait variant. It runs through `build-phase7a.ps1 -Test`. The cleanup report records file preservation and native KiCad rechecks.
+
 ## Repeat the software checks
 
-Complete the root README's installation steps first. Run from the root:
+Complete [the setup guide](setup.md) first. Run from the root:
 
 ```powershell
 .\build-phase7a.ps1 -Test
@@ -40,4 +42,4 @@ The raw phase logs remain available locally; curated phase records and this summ
 
 The developer reported physically successful mouse/pinch gameplay and USB-serial Mega onboard LED feedback. These user-reported integration checks are distinct from automated tests run by the assistant.
 
-The active buzzer assembly remains **Designed — Hardware Validation Pending**, including its unidentified physical transistor pinout. The projector and external webcam have not been purchased/tested in this workflow. KiCad-native opening/ERC and real mounting/optical validation remain outstanding. See [hardware validation](hardware-validation-status.md), [projector preparation](phase7a-projector-ready.md) and [concept CAD](../hardware/concept-cad/README.md) for the precise boundaries. No frame-rate, latency, accuracy or usability benchmark is asserted.
+The owner has confirmed successful PN2222 wiring and a working buzzer circuit. Fabrication and assembled-PCB testing have not been reported. The projector and external webcam have not been purchased/tested in this workflow. The Phase 9 native schematic/PCB checks are recorded separately; real mounting/optical validation remains outstanding. See [hardware validation](hardware-validation-status.md), [projector preparation](projector-setup.md) and [concept CAD](../hardware/concept-cad/README.md) for the precise boundaries. No frame-rate, latency, accuracy or usability benchmark is asserted.

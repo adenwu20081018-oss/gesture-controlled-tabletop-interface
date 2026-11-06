@@ -1,21 +1,15 @@
 # Phase 5C-1 — active buzzer over USB serial
 
-**Status: Designed — Hardware Validation Pending**
+**Status: Working circuit — physically tested by the owner.**
 
-The retained design is a PN2222/2N2222A-family NPN transistor driver with a 470 Ω base resistor, 10 kΩ pull-down, 1N4007 protection diode, and two-pin active buzzer. The available transistor is marked **2N2222A 331**; its exact physical E/B/C pinout is **unverified**. All diagram terminals describe electrical functions only, with no physical pin numbers or lead order assigned.
-
-The physical buzzer circuit has **not been validated or demonstrated working**. Prior firmware compilation and hardware-free tests do not establish electrical operation. Hardware investigation is deferred; the ULN2003 option is not the selected design.
-
-For GitHub or an exhibition, display the circuit **unpowered**, with USB and every other supply disconnected. Suggested caption: “Phase 5C-1 active buzzer driver — Designed — Hardware Validation Pending. E/B/C are functional labels; physical transistor pinout and audible operation remain unverified.” Documentation is finalized at this scope; hardware validation is not complete.
-
-The Mega sketch now accepts **BUZZ**, switches **D8 HIGH for 180 ms**, and returns **ACK BUZZ immediately on acceptance**. It then turns D8 LOW without another response. This phase does not add BUZZ to Java or connect it to game events. Existing Java feedback still sends only BLINK.
+The owner confirms the previously discussed PN2222 wiring pattern works and the active-buzzer circuit is operational. This supersedes the earlier Phase 5C-1 pending-validation status. The circuit retains the 470 Ω base resistor, 10 kΩ pull-down, 1N4007 and active buzzer. E/B/C labels identify electrical functions; no new physical lead order is inferred here. PCB fabrication and assembled-PCB operation are separate and have not been reported.
 
 ## Files
 
 - Modified: `arduino/serial_test/serial_test.ino`.
-- Added: this guide, `docs/images/phase5c1-buzzer-wiring.svg`, `docs/images/phase5c1-breadboard.svg`, and their PNG previews.
+- Added: this guide, `docs/archive/images/phase5c1-buzzer-wiring.svg`, `docs/archive/images/phase5c1-breadboard.svg`, and their PNG previews.
 - Added hardware-free tests: `arduino/tests/phase5c1/Arduino.h`, `test_sketch.cpp`, `run-simulation.cjs`, and `run-tests.ps1`.
-- Test record: `docs/phase5c1-test-results.txt`.
+- Test record: `docs/archive/phase5c1-test-results.txt`.
 
 No Java, Python/OpenCV, images/sounds used by the game, or Phase 5B-2 configuration was changed. Test headers are outside the sketch directory and are not part of the uploaded firmware.
 
@@ -43,11 +37,11 @@ For direct drive to become a supported alternative, obtain manufacturer/ELEGOO c
 
 You confirmed the two-pin active buzzer and a TO-92 transistor marked **2N2222A 331**. This supersedes the earlier assumption that the transistor was marked PN2222.
 
-**Pinout status: NOT VERIFIED.** I could not match that complete marking to an authoritative manufacturer marking table. Do not interpret `331` as a pin-order code, and do not substitute a PN2222/P2N2222A datasheet as proof of this part's lead order. The schematic below remains an electrical design; physical transistor leads are deliberately unassigned.
+**Wiring status: owner-tested and working.** The owner confirmed the wiring pattern experimentally. The diagrams retain functional E/B/C labels; the marking alone is not used to infer a new package orientation.
 
 Physical lead identification and powered testing are deferred. Do not energize this display circuit until the exact transistor's terminal order and component suitability have been verified. No further identification work or component purchase is requested for this documentation milestone.
 
-The breadboard plan shows electrical nodes, not a verified transistor footprint. Future assembly and test procedures below are retained as a validation plan, not as completed work or instructions to power the current unverified assembly.
+The breadboard plan shows electrical nodes. The procedures below allow the working circuit to be reproduced and retested; they do not document fabrication or testing of the KiCad PCB.
 
 ## Hardware verification and source references
 
@@ -66,13 +60,13 @@ Use the transistor circuit below. Because the exact buzzer markings and transist
 
 ## Circuit and parts
 
-![Labeled electrical wiring diagram](images/phase5c1-buzzer-wiring.png)
+![Labeled electrical wiring diagram](archive/images/phase5c1-buzzer-wiring.png)
 
-[Open scalable schematic SVG](images/phase5c1-buzzer-wiring.svg).
+[Open scalable schematic SVG](archive/images/phase5c1-buzzer-wiring.svg).
 
-![Conditional breadboard connection plan](images/phase5c1-breadboard.png)
+![Conditional breadboard connection plan](archive/images/phase5c1-breadboard.png)
 
-[Open breadboard SVG](images/phase5c1-breadboard.svg). This is a connection plan, not a verified transistor footprint. Use isolated jumpers from the identified transistor terminals to the labeled breadboard rows. The three physical transistor legs remain unassigned until identification is complete. Rows 10, 20, 24, and 30 below are example rows on a standard breadboard with a–e and f–j contact groups; check your board's actual connectivity first.
+[Open breadboard SVG](archive/images/phase5c1-breadboard.svg). This is a connection plan, not a verified transistor footprint. Use isolated jumpers from the identified transistor terminals to the labeled breadboard rows. The three physical transistor legs remain unassigned until identification is complete. Rows 10, 20, 24, and 30 below are example rows on a standard breadboard with a–e and f–j contact groups; check your board's actual connectivity first.
 
 | Breadboard node | Example holes | Connect here |
 | --- | --- | --- |
@@ -142,7 +136,7 @@ Name four separate breadboard nodes: **+5V**, **GND**, **BASE**, and **BUZZ+**; 
 
 Send the literal command text without quotes or a typed `\n`. Serial Monitor supplies the line ending. For ordinary testing, send one command at a time and wait for its reply. After BUZZ, additionally wait about 250 ms before sending another BUZZ because its ACK is immediate, not a completion indication.
 
-| Send | Expected response | Expected physical result — unverified |
+| Send | Expected response | Expected physical result |
 | --- | --- | --- |
 | `PING` | `PONG` | No change |
 | `BUZZ` | `ACK BUZZ` immediately | One approximately 180 ms beep, then quiet |

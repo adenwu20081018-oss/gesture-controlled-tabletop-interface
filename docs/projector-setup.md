@@ -15,7 +15,7 @@ Presentation mode supports resizing and Windows **Maximize/Restore**. It deliber
 Open PowerShell in the repository root. These commands use JDK 17 and the existing pinned jSerialComm 2.11.4 dependency; the build downloads/verifies that JAR if missing.
 
 ```powershell
-Set-Location 'C:\path\to\Interactive-Projection-Guess-Who'
+Set-Location 'C:\path\to\gesture-controlled-tabletop-interface'
 $env:Path = 'C:\Program Files\Eclipse Adoptium\jdk-17.0.20.101-hotspot\bin;' + $env:Path
 .\build-phase7a.ps1 -Test
 java -cp 'build-phase5b2;arduino\java\lib\jSerialComm-2.11.4.jar' groupDGuessWho.Main --presentation --window-width 1000 --window-height 625 --viewport-width 1280 --viewport-height 720 --viewport-fit stretch
@@ -29,7 +29,7 @@ Optional existing LED feedback, if the Mega is connected and its correct port is
 java -cp 'build-phase5b2;arduino\java\lib\jSerialComm-2.11.4.jar' groupDGuessWho.Main --presentation --window-width 1000 --window-height 625 --viewport-fit stretch --arduino-port COM5
 ```
 
-Replace COM5 with the actual port. Close Arduino Serial Monitor/Plotter first. Omitting `--arduino-port` opens no serial port. The game still sends BLINK only; BUZZ firmware and the untested transistor buzzer design remain unchanged. Do not energize the unverified buzzer circuit for these tests.
+Replace COM5 with the actual port. Close Arduino Serial Monitor/Plotter first. Omitting `--arduino-port` opens no serial port. The game still sends BLINK only; BUZZ firmware and the owner-tested transistor buzzer circuit remain unchanged.
 
 ## Practice without purchasing equipment
 
@@ -152,6 +152,6 @@ Added: `src/groupDGuessWho/PresentationLayout.java`, `tests/java/groupDGuessWho/
 - On the laptop: verify resizing/maximize/restore, every game screen, mouse controls and builtin-camera virtual pinches.
 - If using the existing Mega: close Serial Monitor, choose the correct COM port and confirm one LED feedback sequence per eligible card action; verify the game still works without the board.
 - Later: test real Extend mode, monitor/DPI placement, external camera selection and fresh physical projection calibration.
-- Keep the untested buzzer design unpowered. Its status remains **DESIGNED — HARDWARE VALIDATION PENDING**.
+- The buzzer circuit is owner-tested and working; this projector workflow does not add game sound feedback.
 
 Stop at Phase 7A. No automatic buzzer feedback, WS2812B functionality or additional phase is implemented.

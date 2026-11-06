@@ -20,5 +20,5 @@ try {
         & java -cp "build-phase5b2;$serialJar" groupDGuessWho.ArduinoFeedbackTest
         if ($LASTEXITCODE -ne 0) { throw 'Arduino feedback tests failed.' }
     }
-    Write-Host 'Phase 5B-2 build complete. See docs/phase5b2-game-arduino-feedback.md.'
+    Write-Host 'Phase 5B-2 build complete. See docs/setup.md.'
 } finally { Pop-Location }

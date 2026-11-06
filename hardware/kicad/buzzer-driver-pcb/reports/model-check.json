@@ -1,0 +1,67 @@
+{
+  "kicad_version": "10.0.8",
+  "models": [
+    {
+      "reference": "Q1",
+      "model": "${KICAD10_3DMODEL_DIR}/Package_TO_SOT_THT.3dshapes/TO-92_Inline_Wide.step",
+      "exists": true
+    },
+    {
+      "reference": "R2",
+      "model": "${KICAD10_3DMODEL_DIR}/Resistor_THT.3dshapes/R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal.step",
+      "exists": true
+    },
+    {
+      "reference": "BZ1",
+      "model": "${KICAD10_3DMODEL_DIR}/Buzzer_Beeper.3dshapes/Buzzer_12x9.5RM7.6.step",
+      "exists": true
+    },
+    {
+      "reference": "R1",
+      "model": "${KICAD10_3DMODEL_DIR}/Resistor_THT.3dshapes/R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal.step",
+      "exists": true
+    },
+    {
+      "reference": "J1",
+      "model": "${KICAD10_3DMODEL_DIR}/Connector_PinHeader_2.54mm.3dshapes/PinHeader_1x03_P2.54mm_Vertical.step",
+      "exists": true
+    },
+    {
+      "reference": "D1",
+      "model": "${KICAD10_3DMODEL_DIR}/Diode_THT.3dshapes/D_DO-41_SOD81_P10.16mm_Horizontal.step",
+      "exists": true
+    }
+  ],
+  "missing_models": 0,
+  "net_membership_matches_expected": true,
+  "nets": {
+    "/BASE": [
+      "Q1.1",
+      "R2.1",
+      "R1.2"
+    ],
+    "/SWITCHED": [
+      "Q1.2",
+      "BZ1.2",
+      "D1.2"
+    ],
+    "/GND": [
+      "Q1.3",
+      "R2.2",
+      "J1.3"
+    ],
+    "/+5V": [
+      "BZ1.1",
+      "J1.2",
+      "D1.1"
+    ],
+    "/D8": [
+      "R1.1",
+      "J1.1"
+    ]
+  },
+  "footprints": 6,
+  "tracks": 29,
+  "zones": 1,
+  "copper_layers": 2
+}

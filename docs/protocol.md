@@ -9,7 +9,7 @@ Close any previous integrated game using port 5050 before launching another. The
 Terminal 1:
 
 ```powershell
-Set-Location 'C:\path\to\Interactive-Projection-Guess-Who'
+Set-Location 'C:\path\to\gesture-controlled-tabletop-interface'
 $jdk17 = 'C:\Program Files\Eclipse Adoptium\jdk-17.0.20.101-hotspot'
 & "$jdk17\bin\javac.exe" -encoding UTF-8 --release 17 -d build-phase4b src\groupDGuessWho\*.java
 if ($LASTEXITCODE -ne 0) { throw 'Java compilation failed' }
@@ -142,7 +142,7 @@ Created:
 - `test_java_connection.py`
 - `tests/test_java_protocol.py`
 - `tests/java/groupDGuessWho/ControlTestHarness.java`
-- `docs/phase4b-communication.md`
+- `docs/protocol.md`
 
 Generated: build-phase4b and build-phase4b-tests class files, plus build-phase4b/stdout.log and stderr.log. Original bin files, Eclipse configuration, images, sounds, and all Phase 1–3 computer-vision code/tests were preserved.
 
