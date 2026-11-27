@@ -4,7 +4,7 @@ I built a webcam-based interface that lets me play my Java Guess Who game by pin
 
 ![Character selection in the Java game](screenshots/game-selection.png)
 
-[Windows setup](docs/setup.md) · [Hardware files](hardware/README.md) · [Test results](docs/testing.md)
+[Windows setup](docs/setup.md) · [Hardware files](hardware/README.md) · [Software checks](docs/testing.md)
 
 ## Why I built this
 
@@ -16,12 +16,6 @@ I first built Guess Who for my Grade 11 programming project, from the character 
 - **Four-point calibration.** I mapped a rectangle in the camera image to the game window so I could aim at cards from the calibrated area.
 - **Java game integration.** Python sends selections over TCP. Java runs the same button action for a pinch and a mouse click.
 - **Arduino feedback.** The Java game sends a USB-serial command to the Mega 2560 to trigger its onboard LED. I also built and tested a breadboard buzzer circuit using a standalone command.
-
-## Testing and results
-
-I tested mouse and webcam-pinch gameplay on my laptop and confirmed that character-card actions triggered the Mega's onboard LED. I also confirmed that the buzzer worked with a standalone command. In the recorded software runs, 73 vision and calibration tests and 16 Python-to-Java TCP integration tests passed.
-
-[See the full results and repeat the checks](docs/testing.md).
 
 ## Hardware
 
